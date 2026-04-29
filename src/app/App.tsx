@@ -10,6 +10,7 @@ import "../css/app.css";
 import "../css/navbar.css";
 import "../css/footer.css";
 import "../css/products.css";
+import "../css/otherNavbar.css";
 import HelpPage from "./screens/helpPage";
 import UserPage from "./screens/userPage";
 import useBasket from "./hooks/useBasket";

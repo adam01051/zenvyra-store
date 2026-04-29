@@ -1,7 +1,7 @@
 import { Box, Button, Container, ListItemIcon, Menu, MenuItem, Stack } from "@mui/material";
 import { NavLink } from "react-router-dom";
 import Basket from "./Basket";
-import { useEffect, useState } from "react";
+
 import { CartItem } from "../../../lib/types/search";
 import { useGlobals } from "../../hooks/useGlobals";
 import { serverApi } from "../../../lib/config";
@@ -41,11 +41,15 @@ export default function HomeNavbar(props:HomeNavbarProps) {
 
 	return (
 		<div className="home-navbar">
-			<Container className="navbar-container">
+			<div className="navbar">
 				<Stack className="menu">
 					<Box>
 						<NavLink to="/">
-							<img className="brand-logo" src="/icons/burak.svg" alt="Logo" />
+							<div className="nav-left" >
+								<a  href="/admin" className="logo" >
+									ZENVYRA
+								</a>
+							</div>
 						</NavLink>
 					</Box>
 					<Stack className="links">
@@ -104,8 +108,8 @@ export default function HomeNavbar(props:HomeNavbarProps) {
 										? `${serverApi}/${authMember.memberImage}`
 										: "/icons/default-user.svg"
 								}
-									alt="avatarPic"
-									onClick={handleLogoutClick}
+								alt="avatarPic"
+								onClick={handleLogoutClick}
 							/>
 						)}
 
@@ -153,7 +157,8 @@ export default function HomeNavbar(props:HomeNavbarProps) {
 						</Menu>
 					</Stack>
 				</Stack>
-
+			</div>
+			<div className="navbar-container">
 				<Stack className={"header-frame"}>
 					<Stack className={"detail"}>
 						<Box className={"head-main-txt"}>Worlds most delicious food</Box>
@@ -171,13 +176,10 @@ export default function HomeNavbar(props:HomeNavbarProps) {
 							) : null}
 						</Box>
 					</Stack>
-					<Box className={"logo-frame"}>
-						<div className="logo-img"></div>
-					</Box>
 				</Stack>
 
 				<Stack></Stack>
-			</Container>
+			</div>
 		</div>
 	);
 }
