@@ -3,74 +3,83 @@
   
 ======================= */
 .home-navbar .navbar {
-    width: 100%;
-    height: 80px;
-    background-color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
- 
+	width: 100%;
+	height: 80px;
+	background-color: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
-
 
 /* Force MUI Stack to behave like a horizontal Shop.co nav */
 .home-navbar .menu {
-    width: 95%;
-    max-width: 1400px;
-    flex-direction: row !important; 
-    justify-content: space-between;
-    align-items: center;
-
+	width: 95%;
+	max-width: 1400px;
+	flex-direction: row !important;
+	justify-content: space-between;
+	align-items: center;
 }
 
 .home-navbar .logo {
-    font-family: 'Satoshi', sans-serif;
-    font-size: 32px;
-    font-weight: 900; /* Extra chunky logo */
-    color: #000;
-    letter-spacing: -1px;
-    text-transform: uppercase;
-    text-decoration: none;
+	font-family: "Satoshi", sans-serif;
+	font-size: 32px;
+	font-weight: 900; 
+	color: #000;
+	letter-spacing: -1px;
+	text-transform: uppercase;
+	text-decoration: none;
 }
 
 /* Links & Navigation */
 .home-navbar .links {
-    flex-direction: row !important;
-    align-items: center;
-    gap: 24px;
-   
-    flex-grow: 1;
-    justify-content: flex-end; /* Pushes links and basket together */
+	flex-direction: row !important;
+	align-items: center;
+	gap: 24px;
+	margin-right: 20px;
+	flex-grow: 1;
+	justify-content: flex-end; /* Pushes links and basket together */
 }
 
 .home-navbar .links a {
-    font-family: 'Satoshi', sans-serif;
-    
-    font-size: 16px;
-    font-weight: 500;
-    color: #000;
-    text-decoration: none;
-    transition: opacity 0.2s;
-}
+	font-family: "Satoshi", sans-serif;
 
+
+
+	color: #000;
+
+	transition: opacity 0.2s;
+
+	color: #000;
+
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 500;
+}
 
 /* Active Link State */
 
-
 /* User Avatar */
 .home-navbar .user {
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    cursor: pointer;
+	width: 24px;
+	height: 24px;
+	border-radius: 50%;
+	cursor: pointer;
 }
 
-/* Login Button like Shop.co buttons */
+/* Login Button like  buttons */
 .home-navbar .login-button {
-    background-color: #000 !important;
-    border-radius: 62px !important;
-    text-transform: none !important;
-    padding: 8px 20px !important;
+	background-color: #000 !important;
+	border-radius: 62px !important;
+	text-transform: none !important;
+color: #FFF;
+	display: flex;
+	width: 150px;
+	height: 52px;
+	padding: 16px 54px;
+	justify-content: center;
+	align-items: center;
+	gap: 30px;
+    font-size: 20px;
 }
 
 /* =======================
@@ -78,95 +87,184 @@
  
 ======================= */
 .home-navbar .navbar-container {
-    width: 100%;
-    min-height: 660px;
-    background-color: #F2F0F1; 
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
+	width: 100%;
+	min-height: 660px;
+	background-color: #f2f0f1;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+    padding-left: 40px;
 }
 
 .home-navbar .header-frame {
-    width: 95%;
-    max-width: 1400px;
-    height: 100%;
-    flex-direction: row !important;
-    background: url("/public/img/Rectangle 2.png") no-repeat right bottom;
-    background-size: contain;
-    /* Resetting your previous margin */
-    padding: 80px 0;
+	width: 100%;
+height: 663px;
+	flex-direction: row !important;
+	background: url("/public/img/Rectangle 2.png") no-repeat right bottom;
+	background-size: contain;
+	/* Resetting your previous margin */
+	padding: 80px 0;
 }
 
 .home-navbar .detail {
-    width: 600px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+	width: 600px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
 /* Big Bold Headline */
 .home-navbar .head-main-txt {
-    width: 100%;
-    height: auto !important;
-    font-family: 'Satoshi', sans-serif;
-    font-size: 64px;
-    font-weight: 900;
-    line-height: 1;
+	width: 100%;
+	height: auto !important;
+	
+
+
+	
+	color: #000;
+	margin-bottom: 20px;
     color: #000;
-    margin-bottom: 20px;
+
+
+font-family: "Integral CF";
+font-size: 62px;
+font-style: normal;
+font-weight: 700;
+line-height: 64px; /* 100% */
 }
 
 /* Subtitles */
 .home-navbar .wel-txt {
-    width: 100%;
-    height: auto !important;
-    font-family: 'Satoshi', sans-serif;
-    font-size: 16px;
-    color: rgba(0,0,0,0.6);
-    line-height: 1.5;
-    margin-bottom: 10px;
+	width: 100%;
+	height: auto !important;
+	font-family: "Satoshi", sans-serif;
+	font-size: 16px;
+	color: rgba(0, 0, 0, 0.6);
+	line-height: 1.5;
+	margin-bottom: 10px;
+   
+
+
+font-style: normal;
+font-weight: 400;
+
 }
 
 .home-navbar .service-txt {
-    font-family: 'Satoshi', sans-serif;
-    font-size: 14px;
-    color: rgba(0,0,0,0.4);
-    text-transform: uppercase;
+	font-family: "Satoshi", sans-serif;
+	font-size: 14px;
+	color: rgba(0, 0, 0, 0.4);
+	text-transform: uppercase;
 }
 
 /* Shop Now / Sign Up Button */
 .home-navbar .signup {
-    margin-top: 40px !important;
+	margin-top: 40px !important;
 }
 
 .home-navbar .signup-button {
-    width: 210px;
-    height: 52px;
-    background: #000 !important;
-    color: #fff !important;
-    border-radius: 62px !important; /* Pill shape */
-    font-weight: 500 !important;
-    text-transform: none !important;
+	width: 210px;
+	height: 52px;
+	background: #000 !important;
+	color: #fff !important;
+	border-radius: 62px !important; /* Pill shape */
+	font-weight: 500 !important;
+	text-transform: none !important;
 }
 
 /* Underline Animation */
 .home-navbar .hover-line {
-    position: relative;
-    margin-left: 40px;
+	position: relative;
+	margin-left: 40px;
 }
 
 .home-navbar .hover-line::after {
-    content: "";
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: #000;
-    transform: scaleX(0);
-    transition: transform 0.3s ease;
+	content: "";
+	position: absolute;
+	bottom: -5px;
+	left: 0;
+	width: 100%;
+	height: 3px;
+	background-color: #000;
+	transform: scaleX(0);
+	transition: transform 0.3s ease;
 }
 
 .home-navbar .hover-line:hover::after {
-    transform: scaleX(1);
+	transform: scaleX(1);
+}
+a,
+a:visited,
+a:hover,
+a:active {
+	text-decoration: none;
+}
+
+
+
+
+/* ===============================
+   STATS ROW FOR YOUR CURRENT JSX
+   (.info is inside .detail)
+=============================== */
+
+.home-navbar .navbar-container .header-frame .detail .info{
+	margin-top: 48px;
+	width: 100%;
+	display: flex;
+	flex-direction: row !important;
+	align-items: center;
+	justify-content: space-between;
+	
+	flex-wrap: nowrap;
+}
+
+/* each stat block */
+.home-navbar .navbar-container .header-frame .detail .info .static-box{
+	min-width: 110px;
+	display: flex;
+	flex-direction: column !important;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+    
+
+}
+
+/* big number */
+.home-navbar .navbar-container .header-frame .detail .info .static-box .static-num{
+	position: relative;
+font-size: 40px;
+font-family: Satoshi;
+color: #000;
+text-align: left;
+}
+
+/* small label */
+.home-navbar .navbar-container .header-frame .detail .info .static-box .static-text{
+	position: relative;
+font-size: 16px;
+line-height: 22px;
+font-family: Satoshi;
+color: rgba(0, 0, 0, 0.6);
+text-align: left;
+}
+
+/* if header background is light use this instead */
+/*
+.static-num{ color:#000; }
+.static-text{ color:rgba(0,0,0,.65); }
+*/
+
+/* mobile */
+@media (max-width: 768px){
+	.home-navbar .navbar-container .header-frame .detail .info{
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 18px;
+	}
+
+	.home-navbar .navbar-container .header-frame .detail .info .static-box{
+		min-width: 130px;
+	}
 }

@@ -47,7 +47,11 @@ export default function OtherNavbar(props: OtherNavbarProps) {
 				<Stack className="menu">
 					<Box>
 						<NavLink to="/">
-							<img className="brand-logo" src="/icons/burak.svg" alt="Logo" />
+							<div className="brand-logo">
+								<a href="/admin" className="logo">
+									ZENVYRA
+								</a>
+							</div>
 						</NavLink>
 					</Box>
 					<Stack className="links">

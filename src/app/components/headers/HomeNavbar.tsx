@@ -6,7 +6,7 @@ import { CartItem } from "../../../lib/types/search";
 import { useGlobals } from "../../hooks/useGlobals";
 import { serverApi } from "../../../lib/config";
 import { Logout } from "@mui/icons-material";
-
+import Divider from "../../components/divider";
 
 interface HomeNavbarProps {
 	cartItems: CartItem[];
@@ -45,8 +45,8 @@ export default function HomeNavbar(props:HomeNavbarProps) {
 				<Stack className="menu">
 					<Box>
 						<NavLink to="/">
-							<div className="nav-left" >
-								<a  href="/admin" className="logo" >
+							<div className="nav-left">
+								<a href="/admin" className="logo">
 									ZENVYRA
 								</a>
 							</div>
@@ -77,6 +77,7 @@ export default function HomeNavbar(props:HomeNavbarProps) {
 								</NavLink>
 							</Box>
 						) : null}
+
 						<Box className={"hover-line"}>
 							<NavLink to="/help" activeClassName={"underline"}>
 								Help
@@ -90,6 +91,10 @@ export default function HomeNavbar(props:HomeNavbarProps) {
 							onDelete={onDelete}
 							onDeleteAll={onDeleteALl}
 						/>
+						<Box>
+							<div> </div>
+						</Box>
+
 						{!authMember ? (
 							<Box>
 								<Button
@@ -161,9 +166,15 @@ export default function HomeNavbar(props:HomeNavbarProps) {
 			<div className="navbar-container">
 				<Stack className={"header-frame"}>
 					<Stack className={"detail"}>
-						<Box className={"head-main-txt"}>Worlds most delicious food</Box>
-						<Box className={"wel-txt"}>The Choice, not just a choice</Box>
-						<Box className={"service-txt"}> 24 hours service</Box>
+						<Box className={"head-main-txt"}>
+							FIND CLOTHES THAT MATCHES YOUR STYLE
+						</Box>
+						<Box className={"wel-txt"}>
+							Browse through our diverse range of meticulously crafted garments,
+							designed to bring out your individuality and cater to your sense
+							of style.
+						</Box>
+
 						<Box className={"signup"}>
 							{!authMember ? (
 								<Button
@@ -175,6 +186,23 @@ export default function HomeNavbar(props:HomeNavbarProps) {
 								</Button>
 							) : null}
 						</Box>
+
+						<Stack className="info">
+							<Stack className="static-box">
+								<Box className="static-num">12</Box>
+								<Box className="static-text">International-brands</Box>
+							</Stack>
+							<Divider height="64" width="2" bg="#0000001A" />
+							<Stack className="static-box">
+								<Box className="static-num">8</Box>
+								<Box className="static-text">Experience</Box>
+							</Stack>
+							<Divider height="64" width="2" bg="#0000001A" />
+							<Stack className="static-box">
+								<Box className="static-num">50+</Box>
+								<Box className="static-text">High-Quality Products</Box>
+							</Stack>
+						</Stack>
 					</Stack>
 				</Stack>
 
