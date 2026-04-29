@@ -76,8 +76,18 @@ export default function Basket(props: BasketProps) {
 				aria-haspopup="true"
 				aria-expanded={open ? "true" : undefined}
 				onClick={handleClick}
+				sx={{ color: "#000" }}
 			>
-				<Badge badgeContent={cartItems.length} color="secondary">
+				<Badge
+					badgeContent={cartItems.length}
+					sx={{
+						"& .MuiBadge-badge": {
+							backgroundColor: "#000",
+							color: "#fff",
+							fontFamily: "Satoshi",
+						},
+					}}
+				>
 					<img src={"/icons/frame.svg"} />
 				</Badge>
 			</IconButton>
@@ -141,7 +151,7 @@ export default function Basket(props: BasketProps) {
 										<div className={"cancel-btn"}>
 											<CancelIcon
 												onClick={() => onDelete(item)}
-												color={"primary"}
+												sx={{ color: "#000", fontSize: "20px" }}
 											/>
 										</div>
 										<img src={imagePath} className={"product-img"} />
@@ -149,7 +159,7 @@ export default function Basket(props: BasketProps) {
 										<p className={"product-price"}>
 											${item.price} * {item.quantity}
 										</p>
-										<Box sx={{ minWidth: 120 }}>
+										<Box sx={{ minWidth: 60 }}>
 											<div className="col-2">
 												<button
 													onClick={() => onRemove(item)}
@@ -177,6 +187,14 @@ export default function Basket(props: BasketProps) {
 								onClick={proceedOrderHandler}
 								startIcon={<ShoppingCartIcon />}
 								variant={"contained"}
+								sx={{
+									backgroundColor: "#000",
+									color: "#fff",
+									borderRadius: "62px", // Pill shape
+									textTransform: "none",
+									fontFamily: "Satoshi",
+									"&:hover": { backgroundColor: "#333" },
+								}}
 							>
 								Order
 							</Button>
