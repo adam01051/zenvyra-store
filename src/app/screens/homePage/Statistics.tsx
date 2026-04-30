@@ -1,6 +1,4 @@
-import { Box, Container, Stack } from "@mui/material";
-import React from "react";
-import Divider from "../../components/divider";
+import { Container, Stack } from "@mui/material";
 
 export default function Statistics() {
 	return (
@@ -8,23 +6,22 @@ export default function Statistics() {
 			<Container>
 				<Stack className="info">
 					<Stack className="static-box">
-						<Box className="static-num">12</Box>
-						<Box className="static-text">Restraurant</Box>
+						<img src="../icons/versace.svg" alt=""></img>
 					</Stack>
-					<Divider height="64" width="2" bg="#e3c08d" />
+
 					<Stack className="static-box">
-						<Box className="static-num">8</Box>
-						<Box className="static-text">Experience</Box>
+						<img src="../icons/zara-logo.svg" alt="2"></img>
 					</Stack>
-					<Divider height="64" width="2" bg="#e3c08d" />
+
 					<Stack className="static-box">
-						<Box className="static-num">50+</Box>
-						<Box className="static-text">Menu</Box>
+						<img src="../icons/gucci.svg" alt="3"></img>
 					</Stack>
-					<Divider height="64" width="2" bg="#e3c08d" />
+
 					<Stack className="static-box">
-						<Box className="static-num">200+</Box>
-						<Box className="static-text">Clients</Box>
+						<img src="../icons/prada.svg" alt="4"></img>
+					</Stack>
+					<Stack className="static-box">
+						<img src="../icons/calvin.svg" alt="5"></img>
 					</Stack>
 				</Stack>
 			</Container>

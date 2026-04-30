@@ -1,270 +1,305 @@
-/* =======================
-   1. MAIN NAVBAR STYLING
-  
-======================= */
-.home-navbar .navbar {
-	width: 100%;
-	height: 80px;
-	background-color: #fff;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+/* ============================================================
+   home-navbar.css — SHOP.CO style
+   FIX: navbar and hero both centered at all zoom levels
+   STYLING ONLY — same class names, same structure
+   ============================================================ */
+
+/* ── Wrapper ────────────────────────────────────────────── */
+
+.home-navbar {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  font-size: 20px;
+  color: #000000;
+  font-family: "Satoshi", sans-serif;
+  background: #f2f0f1;
+
+  /* Remove fixed padding — centering handled by inner containers */
+  padding-left: 0;
+  padding-right: 0;
+
+  /* Remove grid — causes left/right attachment issue */
+  display: block;
 }
 
-/* Force MUI Stack to behave like a horizontal Shop.co nav */
-.home-navbar .menu {
-	width: 95%;
-	max-width: 1400px;
-	flex-direction: row !important;
-	justify-content: space-between;
-	align-items: center;
+/* ── White Nav Bar ──────────────────────────────────────── */
+
+.home-navbar .navbar {
+  width: 100%;
+  height: 80px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e8e8e8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+/* Menu row — centered with max-width */
+.home-navbar .menu {
+  width: 90%;
+  max-width: 1400px;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  align-items: center;
+}
+
+/* ── Logo ───────────────────────────────────────────────── */
 
 .home-navbar .logo {
-	font-family: "Satoshi", sans-serif;
-	font-size: 32px;
-	font-weight: 900; 
-	color: #000;
-	letter-spacing: -1px;
-	text-transform: uppercase;
-	text-decoration: none;
+  font-family: "Satoshi", sans-serif;
+  font-size: 32px;
+  font-weight: 900;
+  color: #000000;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+  text-decoration: none;
 }
 
-/* Links & Navigation */
+/* ── Links ──────────────────────────────────────────────── */
+
 .home-navbar .links {
-	flex-direction: row !important;
-	align-items: center;
-	gap: 24px;
-	margin-right: 20px;
-	flex-grow: 1;
-	justify-content: flex-end; /* Pushes links and basket together */
+  flex-direction: row !important;
+  align-items: center;
+  gap: 24px;
+  flex-grow: 1;
+
+  justify-content: flex-end;
 }
 
 .home-navbar .links a {
-	font-family: "Satoshi", sans-serif;
 
-
-
-	color: #000;
-
-	transition: opacity 0.2s;
-
-	color: #000;
-
-	font-size: 20px;
-	font-style: normal;
-	font-weight: 500;
-}
-
-/* Active Link State */
-
-/* User Avatar */
-.home-navbar .user {
-	width: 24px;
-	height: 24px;
-	border-radius: 50%;
-	cursor: pointer;
-}
-
-/* Login Button like  buttons */
-.home-navbar .login-button {
-	background-color: #000 !important;
-	border-radius: 62px !important;
-	text-transform: none !important;
-color: #FFF;
-	display: flex;
-	width: 150px;
-	height: 52px;
-	padding: 16px 54px;
-	justify-content: center;
-	align-items: center;
-	gap: 30px;
-    font-size: 20px;
-}
-
-/* =======================
-   2. NAVBAR-CONTAINER (HERO)
+  font-family: "Satoshi", sans-serif;
+font-size: 20px;
+  color: #000000;
  
-======================= */
-.home-navbar .navbar-container {
-	width: 100%;
-	min-height: 660px;
-	background-color: #f2f0f1;
-	overflow: hidden;
-	display: flex;
-	justify-content: center;
-    padding-left: 40px;
+  font-style: normal;
+  font-weight: 500;
+  padding-right: 20px;
+  transition: opacity 0.2s ease;
+  text-decoration: none;
 }
 
-.home-navbar .header-frame {
-	width: 100%;
-height: 663px;
-	flex-direction: row !important;
-	background: url("/public/img/Rectangle 2.png") no-repeat right bottom;
-	background-size: contain;
-	/* Resetting your previous margin */
-	padding: 80px 0;
+.home-navbar .links a:hover {
+  opacity: 0.55;
 }
 
-.home-navbar .detail {
-	width: 600px;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+/* ── Login Button ───────────────────────────────────────── */
+
+.home-navbar .login-button {
+  background-color: #000000 !important;
+  border-radius: 62px !important;
+  text-transform: none !important;
+  color: #ffffff !important;
+  width: 150px;
+  height: 52px;
+  padding: 16px 54px;
+font-size: 20px !important;
+  font-weight: 500 !important;
+  box-shadow: none !important;
+  transition: opacity 0.2s ease !important;
+  
 }
 
-/* Big Bold Headline */
-.home-navbar .head-main-txt {
-	width: 100%;
-	height: auto !important;
-	
-
-
-	
-	color: #000;
-	margin-bottom: 20px;
-    color: #000;
-
-
-font-family: "Integral CF";
-font-size: 62px;
-font-style: normal;
-font-weight: 700;
-line-height: 64px; /* 100% */
+.home-navbar .login-button:hover {
+  opacity: 0.78 !important;
+  background-color: #000000 !important;
 }
 
-/* Subtitles */
-.home-navbar .wel-txt {
-	width: 100%;
-	height: auto !important;
-	font-family: "Satoshi", sans-serif;
-	font-size: 16px;
-	color: rgba(0, 0, 0, 0.6);
-	line-height: 1.5;
-	margin-bottom: 10px;
-   
+/* ── User Avatar ────────────────────────────────────────── */
 
-
-font-style: normal;
-font-weight: 400;
-
+.home-navbar .user {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 1.5px solid #e8e8e8;
+  transition: border-color 0.2s ease;
+  object-fit: cover;
 }
 
-.home-navbar .service-txt {
-	font-family: "Satoshi", sans-serif;
-	font-size: 14px;
-	color: rgba(0, 0, 0, 0.4);
-	text-transform: uppercase;
+.home-navbar .user:hover {
+  border-color: #000000;
 }
 
-/* Shop Now / Sign Up Button */
-.home-navbar .signup {
-	margin-top: 40px !important;
-}
+/* ── Hover underline ────────────────────────────────────── */
 
-.home-navbar .signup-button {
-	width: 210px;
-	height: 52px;
-	background: #000 !important;
-	color: #fff !important;
-	border-radius: 62px !important; /* Pill shape */
-	font-weight: 500 !important;
-	text-transform: none !important;
-}
-
-/* Underline Animation */
 .home-navbar .hover-line {
-	position: relative;
-	margin-left: 40px;
+  position: relative;
+  margin-left: 0;
 }
 
 .home-navbar .hover-line::after {
-	content: "";
-	position: absolute;
-	bottom: -5px;
-	left: 0;
-	width: 100%;
-	height: 3px;
-	background-color: #000;
-	transform: scaleX(0);
-	transition: transform 0.3s ease;
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #000000;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
 }
 
 .home-navbar .hover-line:hover::after {
-	transform: scaleX(1);
-}
-a,
-a:visited,
-a:hover,
-a:active {
-	text-decoration: none;
+  transform: scaleX(1);
 }
 
-
-
-
-/* ===============================
-   STATS ROW FOR YOUR CURRENT JSX
-   (.info is inside .detail)
-=============================== */
-
-.home-navbar .navbar-container .header-frame .detail .info{
-	margin-top: 48px;
-	width: 100%;
-	display: flex;
-	flex-direction: row !important;
-	align-items: center;
-	justify-content: space-between;
-	
-	flex-wrap: nowrap;
+a, a:visited, a:hover, a:active {
+  text-decoration: none;
 }
 
-/* each stat block */
-.home-navbar .navbar-container .header-frame .detail .info .static-box{
-	min-width: 110px;
-	display: flex;
-	flex-direction: column !important;
-	align-items: center;
-	justify-content: center;
-	text-align: center;
-    
+/* ── Hero Container — centered ──────────────────────────── */
 
+.home-navbar .navbar-container {
+  width: 100%;
+  min-height: 660px;
+  background-color: #f2f0f1;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;   /* centers content horizontally */
+  align-items: stretch;
+
+  /* Remove fixed padding-left that was pinning to left */
+  padding-left: 0;
+  padding-right: 0;
 }
 
-/* big number */
-.home-navbar .navbar-container .header-frame .detail .info .static-box .static-num{
-	position: relative;
-font-size: 40px;
-font-family: Satoshi;
-color: #000;
-text-align: left;
+/* ── Header Frame — inner max-width wrapper ─────────────── */
+
+.home-navbar .header-frame {
+  width: 90%;                /* same as .menu above — stays aligned */
+  max-width: 1400px;         /* caps width so it doesn't stretch on large screens */
+  height: 663px;
+  flex-direction: row !important;
+  background: url("/public/img/Rectangle 2.png") no-repeat right bottom;
+  background-size: contain;
+  padding: 80px 0;
+  margin: 0 auto;            /* centers inside navbar-container */
 }
 
-/* small label */
-.home-navbar .navbar-container .header-frame .detail .info .static-box .static-text{
-	position: relative;
-font-size: 16px;
-line-height: 22px;
-font-family: Satoshi;
-color: rgba(0, 0, 0, 0.6);
-text-align: left;
+/* ── Detail / Text Side ─────────────────────────────────── */
+
+.home-navbar .detail {
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-/* if header background is light use this instead */
-/*
-.static-num{ color:#000; }
-.static-text{ color:rgba(0,0,0,.65); }
-*/
+/* Big headline */
+.home-navbar .head-main-txt {
+  width: 100%;
+  height: auto !important;
+  color: #000000;
+  margin-bottom: 20px;
+  font-family: "Integral CF", sans-serif;
+  font-size: 62px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 64px;
+}
 
-/* mobile */
-@media (max-width: 768px){
-	.home-navbar .navbar-container .header-frame .detail .info{
-		flex-wrap: wrap;
-		justify-content: center;
-		gap: 18px;
-	}
+/* Subtext */
+.home-navbar .wel-txt {
+  width: 100%;
+  height: auto !important;
+  font-family: "Satoshi", sans-serif;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.6);
+  line-height: 1.5;
+  margin-bottom: 10px;
+  font-style: normal;
+  font-weight: 400;
+}
 
-	.home-navbar .navbar-container .header-frame .detail .info .static-box{
-		min-width: 130px;
-	}
+.home-navbar .service-txt {
+  font-family: "Satoshi", sans-serif;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.4);
+  text-transform: uppercase;
+}
+
+/* Signup button */
+.home-navbar .signup {
+  margin-top: 40px !important;
+}
+
+.home-navbar .signup-button {
+  width: 210px;
+  height: 52px;
+  background: #000000 !important;
+  color: #ffffff !important;
+  border-radius: 62px !important;
+  font-weight: 500 !important;
+  font-size: 15px !important;
+  text-transform: none !important;
+  box-shadow: none !important;
+  transition: opacity 0.2s ease, transform 0.15s ease !important;
+}
+
+.home-navbar .signup-button:hover {
+  opacity: 0.78 !important;
+  transform: translateY(-1px) !important;
+}
+
+/* ── Stats Row ──────────────────────────────────────────── */
+
+.home-navbar .navbar-container .header-frame .detail .info {
+  margin-top: 48px;
+  width: 100%;
+  display: flex;
+  flex-direction: row !important;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+
+.home-navbar .navbar-container .header-frame .detail .info .static-box {
+  min-width: 110px;
+  display: flex;
+  flex-direction: column !important;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: left;
+}
+
+.home-navbar .navbar-container .header-frame .detail .info .static-box .static-num {
+  font-size: 40px;
+  font-family: "Satoshi", sans-serif;
+  font-weight: 700;
+  color: #000000;
+  text-align: left;
+}
+
+.home-navbar .navbar-container .header-frame .detail .info .static-box .static-text {
+  font-size: 14px;
+  line-height: 22px;
+  font-family: "Satoshi", sans-serif;
+  color: rgba(0, 0, 0, 0.6);
+  text-align: left;
+}
+
+/* ── Mobile ─────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .home-navbar .menu,
+  .home-navbar .header-frame {
+    width: 95%;
+  }
+
+  .home-navbar .navbar-container .header-frame .detail .info {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px;
+  }
+
+  .home-navbar .navbar-container .header-frame .detail .info .static-box {
+    min-width: 130px;
+  }
+
+  .home-navbar .head-main-txt {
+    font-size: 40px;
+    line-height: 46px;
+  }
 }

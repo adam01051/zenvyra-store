@@ -1,52 +1,36 @@
 .homepage {
 	width: 100%;
 	height: auto;
+	background-color: #fff;
 }
 /* statistics*/
 
-
 .homepage .static-frame {
 	width: 100%;
-	height: 236px;
-	background-color: #343434;
+	height: 122px;
+	background-color: #000;
+	display: flex;
+	
 }
 
 .homepage .static-frame .info {
-	height: 100%;
+	width: 100%;
+	height: 120px;
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
-	align-items: center;
-}
-
-.homepage .static-frame .info .static-box {
-	width: 200px;
-	height: 116px;
-	display: flex;
-	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+
 }
 
-.homepage .static-frame .info .static-box .static-num {
-	text-align: center;
-	font-family: Poppins;
-	font-size: 54px;
-	font-style: normal;
-	font-weight: 600;
-	line-height: 80px;
-	color: #d7b686;
+.homepage .static-frame .static-box {
+width: 100%;
+height: 33.3px;
+display: flex;
+align-items: center;
 }
 
-.homepage .static-frame .info .static-box .static-text {
-	color: #d7b586;
-	text-align: center;
-	font-family: Poppins;
-	font-size: 20px;
-	font-style: normal;
-	font-weight: 500;
-	line-height: 30px;
-}
+
 
 /* popular dishes*/
 
