@@ -74,8 +74,9 @@ useEffect(() => {
 	return (
 		<div className={"homepage"}>
 			<Statistics />
-			<PopularDishes />
 			<NewDishes />
+			<PopularDishes />
+
 			<Advertisement />
 			<ActiveUsers />
 

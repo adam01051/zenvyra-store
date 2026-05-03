@@ -1,6 +1,5 @@
 import { Box, Container, Stack } from "@mui/material";
 
-
 import Card from "@mui/joy/Card";
 import { CssVarsProvider } from "@mui/joy/styles";
 import CardOverflow from "@mui/joy/CardOverflow";
@@ -8,81 +7,112 @@ import Typography from "@mui/joy/Typography";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import AspectRatio from "@mui/joy/AspectRatio";
 import Divider from "../../components/divider";
-
-
-
+import CardContent from "@mui/joy/CardContent";
 import { createSelector } from "@reduxjs/toolkit";
 import { retriveNewDishes } from "./selector";
 import { Product } from "../../../lib/types/product";
-import { ProductCollection } from "../../../lib/enums/product.enum";
 
+import CardCover from "@mui/joy/CardCover";
 import { serverApi } from "../../../lib/config";
 import { useSelector } from "react-redux";
-
 
 const newDishesRetriever = createSelector(retriveNewDishes, (newDishes) => ({
 	newDishes,
 }));
 
-
-
-
-
-
 export default function NewDishes() {
 	const { newDishes } = useSelector(newDishesRetriever);
+
 	return (
 		<div className="new-products-frame">
 			<Container>
-				<Stack className={"main"}>
-					<Box className={"category-title"}>Fresh Menu</Box>
+				<Stack className="main">
+					<Box className="category-title">FRESH MENU</Box>
 
-					<Stack className={"cards-frame"}>
-						<CssVarsProvider>
-							{newDishes.length !== 0 ? (
-								newDishes.map((product:Product) => {
-									const imagePath = `${serverApi}/${product.productImages[0]}`;
-									const sizeVolume =
-										product.productCollection === ProductCollection.DRINK
-											? product.productVolume + "l"
-											: product.productSize + " size";
+					<Stack className="cards-frame">
+						{newDishes.length !== 0 ? (
+							newDishes.map((product: Product) => {
+								const imagePath = `${serverApi}/${product.productImages[0]}`;
 
-									return (
-										<Card key={product._id} variant="outlined" className={"card"}>
-											<CardOverflow>
-												<div className="product-sale">{ sizeVolume}</div>
-												<AspectRatio ratio="1">
-													<img src={imagePath} alt="" />
-												</AspectRatio>
-											</CardOverflow>
+								return (
+									<CssVarsProvider key={product._id}>
+										<Card className="card">
+											<CardCover>
+												<img src={imagePath} alt="" />
+											</CardCover>
 
-											<CardOverflow variant="soft" className="product-detail">
-												<Stack className="info">
-													<Stack flexDirection={"row"}>
-														<Typography className={"title"}>
-															{product.productName}
-														</Typography>
+											<CardCover className="card-cover" />
 
-														<Divider width="2" height="24" bg="#d9d9d9" />
-														<Typography className={"price"}> ${product.productPrice} </Typography>
-													</Stack>
-													<Stack>
-														<Typography className={"views"}>
-															{product.productViews}
-															<VisibilityIcon
-																sx={{ fontSize: 20, marginLeft: "5px" }}
-															/>
-														</Typography>
-													</Stack>
+											<CardContent
+												sx={{
+													justifyContent: "flex-end",
+												}}
+											/>
+
+											<CardOverflow
+												sx={{
+													display: "flex",
+													flexDirection: "column",
+													gap: 0.5,
+													py: 1.5,
+													px: "var(--Card-padding)",
+													background: "#F0EEED",
+												}}
+											>
+												<Typography
+													sx={{
+														fontSize: "20px",
+														fontWeight: 700,
+														fontFamily: "Satoshi",
+														color: "#000",
+														textTransform: "capitalize",
+													}}
+												>
+													{product.productName}
+												</Typography>
+
+												<Stack flexDirection="row" alignItems="center" gap={1}>
+													<Typography
+														sx={{
+															fontSize: "24px",
+															fontWeight: 700,
+															fontFamily: "Satoshi",
+															color: "#000",
+														}}
+													>
+														${product.productPrice}
+													</Typography>
+												</Stack>
+
+												<Stack
+													flexDirection="row"
+													justifyContent="space-between"
+												>
+													<Typography
+														sx={{
+															fontWeight: "md",
+															color: "neutral.300",
+															alignItems: "center",
+															display: "flex",
+														}}
+													>
+														{product.productViews}
+														<VisibilityIcon
+															sx={{
+																fontSize: "20px",
+																marginLeft: "5px",
+															}}
+														/>
+													</Typography>
 												</Stack>
 											</CardOverflow>
 										</Card>
-									);
-								})
-							) : (
-								<Box className={"no-data"}>New dishes are not available!</Box>
-							)}
-						</CssVarsProvider>
+									</CssVarsProvider>
+								);
+							})
+						) : (
+							<Box className="no-data">New dishes are not available!</Box>
+						)}
 					</Stack>
 				</Stack>
 			</Container>
