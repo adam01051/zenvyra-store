@@ -47,7 +47,7 @@ export default function ActiveUsers() {
 												</AspectRatio>
 											</CardOverflow>
 
-											<CardOverflow variant="soft">
+											<CardOverflow >
 												<Typography className="member-nickname">
 													{member.memberNick}
 												</Typography>

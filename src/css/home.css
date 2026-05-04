@@ -33,13 +33,13 @@ align-items: center;
 
 
 /* ============================================================
-   popular-dishes — SHOP.CO product card style
+   popular-items — SHOP.CO product card style
    STYLING ONLY — same class names, same structure
    ============================================================ */
 
 /* ── Section Wrapper ────────────────────────────────────── */
 
-.homepage .popular-dishes-frame {
+.homepage .popular-items-frame {
   width: 100%;
   height: auto;
   min-height: 580px;
@@ -50,7 +50,7 @@ align-items: center;
 
 /* ── Section Inner ──────────────────────────────────────── */
 
-.homepage .popular-dishes-frame .popular-section {
+.homepage .popular-items-frame .popular-section {
   margin-top: 60px;
   display: flex;
   flex-direction: column;
@@ -61,7 +61,7 @@ align-items: center;
 
 /* ── Section Title ──────────────────────────────────────── */
 
-.homepage .popular-dishes-frame .popular-section .category-title {
+.homepage .popular-items-frame .popular-section .category-title {
   width: auto;
   height: auto;
   position: relative;
@@ -78,7 +78,7 @@ align-items: center;
 
 /* ── Cards Row ──────────────────────────────────────────── */
 
-.homepage .popular-dishes-frame .popular-section .cards-frame {
+.homepage .popular-items-frame .popular-section .cards-frame {
   width: 100%;
   margin-top: 43px;
   display: flex;
@@ -90,7 +90,7 @@ align-items: center;
 
 /* ── Individual Card ────────────────────────────────────── */
 
-.homepage .popular-dishes-frame .cards-frame .card {
+.homepage .popular-items-frame .cards-frame .card {
   min-width: 300px;
   min-height: 420px;
   cursor: pointer;
@@ -104,20 +104,20 @@ align-items: center;
   transition: transform 0.2s ease;
 }
 
-.homepage .popular-dishes-frame .cards-frame .card:hover {
+.homepage .popular-items-frame .cards-frame .card:hover {
   transform: translateY(-4px);
 }
 
 /* Remove dark overlay — product images on light bg */
-.homepage .popular-dishes-frame .cards-frame .card .card-cover {
+.homepage .popular-items-frame .cards-frame .card .card-cover {
   background: none;
 }
 
 /* ── Card Bottom Info (CardOverflow) ────────────────────── */
 
 /* Product name */
-.homepage .popular-dishes-frame .cards-frame .card .product-name,
-.homepage .popular-dishes-frame .cards-frame .card [class*="CardOverflow"] .MuiTypography-root:first-child {
+.homepage .popular-items-frame .cards-frame .card .product-name,
+.homepage .popular-items-frame .cards-frame .card [class*="CardOverflow"] .MuiTypography-root:first-child {
   font-family: "Satoshi", sans-serif;
 
 
@@ -127,8 +127,8 @@ align-items: center;
 }
 
 /* Price */
-.homepage .popular-dishes-frame .cards-frame .card .product-price,
-.homepage .popular-dishes-frame .cards-frame .card [class*="CardOverflow"] .MuiTypography-root:last-child {
+.homepage .popular-items-frame .cards-frame .card .product-price,
+.homepage .popular-items-frame .cards-frame .card [class*="CardOverflow"] .MuiTypography-root:last-child {
   font-family: "Satoshi", sans-serif;
   font-size: 22px;
   font-weight: 700;
@@ -138,16 +138,16 @@ align-items: center;
 
 /* ── Star Ratings ───────────────────────────────────────── */
 
-.homepage .popular-dishes-frame .cards-frame .card .MuiRating-root,
-.homepage .popular-dishes-frame .cards-frame .card .rating {
+.homepage .popular-items-frame .cards-frame .card .MuiRating-root,
+.homepage .popular-items-frame .cards-frame .card .rating {
   color: #ffc633;
   font-size: 18px;
 }
 
 /* ── Sale / Discount Badge ──────────────────────────────── */
 
-.homepage .popular-dishes-frame .cards-frame .card .discount-badge,
-.homepage .popular-dishes-frame .cards-frame .card .product-sale {
+.homepage .popular-items-frame .cards-frame .card .discount-badge,
+.homepage .popular-items-frame .cards-frame .card .product-sale {
   background: #ff3333;
   color: #ffffff;
   font-family: "Satoshi", sans-serif;
@@ -162,7 +162,7 @@ align-items: center;
 
 /* ── Strikethrough Old Price ────────────────────────────── */
 
-.homepage .popular-dishes-frame .cards-frame .card .old-price {
+.homepage .popular-items-frame .cards-frame .card .old-price {
   font-family: "Satoshi", sans-serif;
   font-size: 18px;
   color: rgba(0, 0, 0, 0.4);
@@ -172,7 +172,7 @@ align-items: center;
 
 /* ── No Data ────────────────────────────────────────────── */
 
-.homepage .popular-dishes-frame .no-data {
+.homepage .popular-items-frame .no-data {
   width: 100%;
   height: 300px;
   display: flex;
@@ -185,12 +185,12 @@ align-items: center;
 }
 
 /* ============================================================
-   new-dishes + popular-dishes (top selling)
+   new-items + popular-items (top selling)
    SHOP.CO product card style — unified
    ============================================================ */
 
 /* ══════════════════════════════════════════════════════════
-   NEW DISHES — "Fresh Menu"
+   NEW items — "Fresh Menu"
 ══════════════════════════════════════════════════════════ */
 
 .homepage .new-products-frame {
@@ -321,7 +321,7 @@ background-color: transparent;
    POPULAR DISHES — "Top Selling"
 ══════════════════════════════════════════════════════════ */
 
-.homepage .popular-item-frame {
+.homepage .popular-items-frame {
   width: 100%;
   height: auto;
   min-height: 580px;
@@ -330,7 +330,7 @@ background-color: transparent;
   padding-bottom: 60px;
 }
 
-.homepage .popular-item-frame .popular-section {
+.homepage .popular-items-frame .popular-section {
   margin-top: 60px;
   display: flex;
   flex-direction: column;
@@ -339,7 +339,7 @@ background-color: transparent;
   width: 100%;
 }
 
-.homepage .popular-item-frame .popular-section .category-title {
+.homepage .popular-items-frame .popular-section .category-title {
   width: auto;
   height: auto;
   position: relative;
@@ -354,7 +354,7 @@ background-color: transparent;
   letter-spacing: -1px;
 }
 
-.homepage .popular-item-frame .popular-section .cards-frame {
+.homepage .popular-items-frame .popular-section .cards-frame {
   width: 100%;
   margin-top: 43px;
   display: flex;
@@ -365,7 +365,7 @@ background-color: transparent;
 }
 
 /* Card */
-.homepage .popular-item-frame .cards-frame .card {
+.homepage .popular-items-frame .cards-frame .card {
   min-width: 300px;
   min-height: 420px;
   cursor: pointer;
@@ -377,38 +377,38 @@ background-color: transparent;
   transition: transform 0.2s ease;
 }
 
-.homepage .popular-item-frame .cards-frame .card:hover {
+.homepage .popular-items-frame .cards-frame .card:hover {
   transform: translateY(-4px);
 }
 
 /* No dark overlay on light bg */
-.homepage .popular-item-frame .cards-frame .card .card-cover {
+.homepage .popular-items-frame .cards-frame .card .card-cover {
   background: none;
 }
 
 /* CardOverflow bottom — already styled via sx in TSX,
    these back it up at the CSS level */
-.homepage .popular-item-frame .cards-frame .card [class*="CardOverflow"] {
+.homepage .popular-items-frame .cards-frame .card [class*="CardOverflow"] {
   background: #f0eeed !important;
   border-top: 1px solid #e8e8e8 !important;
 }
 
 /* Product name */
-.homepage .popular-item-frame .cards-frame .card [class*="CardOverflow"] .MuiTypography-root {
+.homepage .popular-items-frame .cards-frame .card [class*="CardOverflow"] .MuiTypography-root {
   font-family: "Satoshi", sans-serif !important;
   color: #000000 !important;
   text-align: left;
 }
 
 /* Views count */
-.homepage .popular-item-frame .cards-frame .card .MuiTypography-root[class*="neutral"] {
+.homepage .popular-items-frame .cards-frame .card .MuiTypography-root[class*="neutral"] {
   color: rgba(0, 0, 0, 0.45) !important;
   font-family: "Satoshi", sans-serif !important;
   font-size: 14px !important;
 }
 
 /* No data */
-.homepage .popular-item-frame .no-data {
+.homepage .popular-items-frame .no-data {
   width: 100%;
   height: 300px;
   display: flex;
@@ -427,8 +427,9 @@ background-color: transparent;
 
 /* ============================================================
    browse-by-style.css — CSS grid, scales at any width
-   ============================================================ */
 
+   ============================================================ */
+/** advertisement **/
 .browse-style-wrapper {
   width: 100%;
   padding: 60px 50px;
@@ -518,124 +519,126 @@ background-color: transparent;
 }
 
 
-/** active users **/
+
 
 
 
 
 /** ACTIVE USERS **/
+/* ============================================================
+   active-users.css — SHOP.CO style
+   Matches homepage card system
+   ============================================================ */
+
+/* ── Section Wrapper ────────────────────────────────────── */
 
 .homepage .active-users-frame {
-width: 100%;
-height: 550px;
-  background-color: #f8f8f8;
+  width: 100%;
+  height: auto;
+  min-height: 550px;
   display: flex;
-   background: #F8F8FF;
-   
+
+  padding-bottom: 60px;
 }
 
+/* ── Inner Stack ────────────────────────────────────────── */
+
 .homepage .active-users-frame .main {
-    width: 1300px;
-    height: 550px;
+  width: 100%;
+  margin-top: 60px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  
-  width: 100%;
-
-
-
- 
 }
+
+/* ── Section Title ──────────────────────────────────────── */
 
 .homepage .main .category-title {
-display: flex;
-width: 214px;
-height: 31.712px;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-color: #343434;
-font-family: "Roboto Serif";
-font-size: 36px;
-font-style: normal;
-font-weight: 700;
-line-height: 43px;
-margin-bottom: 40px;
-
+  width: 100%;
+  font-family: "Integral CF", sans-serif;
+  font-size: 48px;
+  font-weight: 800;
+  line-height: normal;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+  color: #000000;
+  text-align: center;
+  margin-bottom: 48px;
 }
 
+/* ── Cards Row ──────────────────────────────────────────── */
 
-.homepage .active-users-frame  .cards-frame {
-width: 1262px;
-height: 350.255px;
-
-
-display: flex;
-flex-direction: row;   
+.homepage .active-users-frame .cards-frame {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
   justify-content: space-between;
-
-border-radius: 12px;
-
-
- 
+  gap: 20px;
 }
 
+/* ── Individual Card ────────────────────────────────────── */
 
-.homepage  .active-users-frame  .cards-frame .card {
-width: 305px;
-height: 344.252px;
-
-cursor: pointer;
-
+.homepage .active-users-frame .cards-frame .card {
+  width: 305px;
+  height: 344px;
+  cursor: pointer;
 
 
-background-color: #fff;
-border-radius: 12px 12px 12 12;
+  border-radius: 20px !important;
+  border: none !important;
+  box-shadow: none !important;
+  overflow: hidden;
 
+  transition: transform 0.2s ease;
 }
 
+.homepage .active-users-frame .cards-frame .card:hover {
+  transform: translateY(-4px);
+}
 
+/* ── Image AspectRatio ──────────────────────────────────── */
 
+.homepage .active-users-frame .cards-frame .card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+/* ── Name Overflow ──────────────────────────────────────── */
+
+.homepage .active-users-frame .cards-frame .card [class*="CardOverflow"][variant="soft"] {
+  background: #ffffff !important;
+  border-top: 1px solid #e8e8e8 !important;
+  padding: 12px 16px !important;
+}
+
+/* ── Member Nickname ────────────────────────────────────── */
 
 .homepage .cards-frame .member-nickname {
-display: flex;
-width: 271px;
-height: 26.757px;
-flex-direction: column;
-justify-content: center;
-color: #000;
-text-align: center;
-font-family: "Roboto Serif";
-font-size: 12px;
-font-style: normal;
-font-weight: 600;
-line-height: normal;
-
-
+  width: 100%;
+  font-family: "Satoshi", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #000000;
+  text-align: center;
+  line-height: normal;
 }
 
+/* ── No Data ────────────────────────────────────────────── */
 
 .homepage .cards-frame .no-data {
-width: 100%;
-	height: 300px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	transform: capitalize;
-	font-family: "Poppins";
-	font-weight: 400;
-	font-size: 30px;
-	line-height: 34px;
-
-	color: #e3c08d;
-}	
-
-
-
-
-
-
+  width: 100%;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Satoshi", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: #888888;
+}
 
 
 

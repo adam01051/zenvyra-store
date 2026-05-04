@@ -23,7 +23,7 @@ const popularDishesRetriever = createSelector(
 export default function PopularDishes() {
 	const { popularDishes } = useSelector(popularDishesRetriever);
 	return (
-		<div className="popular-item-frame">
+		<div className="popular-items-frame">
 			<Container>
 				<Stack className="popular-section">
 					<Box className="category-title">TOP SELLING</Box>
@@ -91,7 +91,11 @@ export default function PopularDishes() {
 													>
 														{product.productViews}
 														<VisibilityIcon
-															sx={{ fontSize: "20px", marginLeft: "5px" }}
+															sx={{
+																color: "black.900",
+																fontSize: "20px",
+																marginLeft: "5px",
+															}}
 														/>
 													</Typography>
 												</Stack>

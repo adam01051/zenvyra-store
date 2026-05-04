@@ -100,6 +100,7 @@ export default function NewDishes() {
 														{product.productViews}
 														<VisibilityIcon
 															sx={{
+																color: "black.900",
 																fontSize: "20px",
 																marginLeft: "5px",
 															}}
