@@ -1,17 +1,33 @@
 import React from "react";
 export default function Advertisement() {
 	return (
-		<div className="ads-restaurant-frame">
-			<video
-				className={"ads-video"}
-				autoPlay={true}
-				loop
-				muted
-				playsInline
-				data-video-media=""
-            >
-                <source  type="video/mp4" src="/video/burak-ads.mp4"/>
-            </video>
+		<div className="browse-style-wrapper">
+			<div className="browse-by-dress-style-parent">
+				<span className="browse-by-dress">BROWSE BY DRESS STYLE</span>
+
+				<div className="browse-grid">
+					<div className="browse-tile casual">
+						<img src="/img/image1.png" alt="Casual" />
+						<span className="tile-label">Casual</span>
+					</div>
+
+					<div className="browse-tile formal">
+						<img src="/img/image2.png" alt="Formal" />
+						<span className="tile-label">Formal</span>
+					</div>
+
+					<div className="browse-tile party">
+						<img src="/img/image3.png" alt="Party" />
+						<span className="tile-label">Party</span>
+					</div>
+
+					<div className="browse-tile gym">
+						<img src="/img/image4.png" alt="Gym" />
+						<span className="tile-label">Gym</span>
+					</div>
+				</div>
+			</div>
 		</div>
 	);
 }
+

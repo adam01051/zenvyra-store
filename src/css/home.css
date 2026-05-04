@@ -423,27 +423,99 @@ background-color: transparent;
 
 /** advertisement **/
 
-.homepage .ads-restaurant-frame {
-	width: 100%;
-	height: 693px;
 
-	display: flex;
-	overflow: hidden;
-	transform: perspective(0px);
 
-	box-shadow: -3px 0px 20px 14px #34343480;
+/* ============================================================
+   browse-by-style.css — CSS grid, scales at any width
+   ============================================================ */
+
+.browse-style-wrapper {
+  width: 100%;
+  padding: 60px 50px;
+  background: #ffffff;
+  box-sizing: border-box;
+
 }
 
-.homepage .ads-restaurant-frame .ads-video {
-	width: 100%;
-	background: #0c0e12;
-	display: flex;
-	box-shadow: 0px -8px 90px rgba(215, 215, 255);
-	transform: scale(1.5);
-	overflow: hidden;
+.browse-by-dress-style-parent {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 60px 64px;
+  border-radius: 40px;
+  background-color: #f0f0f0;
+  box-sizing: border-box;
 }
 
+.browse-by-dress {
+  font-size: 48px;
+  font-family: "Integral CF", sans-serif;
+  font-weight: 800;
+  color: #000000;
+  letter-spacing: -1px;
+  text-align: center;
+  margin-bottom: 40px;
+  display: block;
+  width: 100%;
+}
 
+/* 2-column grid: small (407) | wide (684) ≈ 1fr | 1.68fr */
+.browse-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.68fr;
+  grid-template-rows: 289px 289px;
+  gap: 16px;
+}
+
+.browse-tile {
+  position: relative;
+  border-radius: 20px;
+  background-color: #ffffff;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.browse-tile:hover {
+  transform: scale(1.015);
+}
+
+.browse-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.browse-tile .tile-label {
+  position: absolute;
+  top: 24px;
+  left: 28px;
+  font-family: "Satoshi", sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #000000;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Row 1: Casual=small(col1), Formal=wide(col2) */
+.browse-tile.casual { grid-column: 1; grid-row: 1; }
+.browse-tile.formal { grid-column: 2; grid-row: 1; }
+
+/* Row 2: Party=wide(col1), Gym=small(col2)
+   Swap columns on row 2 using grid-template-columns override per row —
+   achieved by reversing tile placement */
+.browse-tile.party  { grid-column: 1; grid-row: 2; }
+.browse-tile.gym    { grid-column: 2; grid-row: 2; }
+
+/* Row 2 has opposite proportions: party wide, gym small
+   Override grid columns for row 2 by using a subgrid-like trick:
+   wrap row 2 in its own grid row with reversed column sizes */
+.browse-grid.row-2-reversed {
+  grid-template-columns: 1.68fr 1fr;
+}
 
 
 /** active users **/

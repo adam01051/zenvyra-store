@@ -5,8 +5,7 @@ import { CssVarsProvider } from "@mui/joy/styles";
 import CardOverflow from "@mui/joy/CardOverflow";
 import Typography from "@mui/joy/Typography";
 import VisibilityIcon from "@mui/icons-material/Visibility";
-import AspectRatio from "@mui/joy/AspectRatio";
-import Divider from "../../components/divider";
+
 import CardContent from "@mui/joy/CardContent";
 import { createSelector } from "@reduxjs/toolkit";
 import { retriveNewDishes } from "./selector";
@@ -28,7 +27,7 @@ export default function NewDishes() {
 			<Container>
 				<Stack className="main">
 					<Box sx={{ width: "130px" }} className="category-title">
-						FRESH MENU
+						NEW ARRIVALS
 					</Box>
 
 					<Stack className="cards-frame">
