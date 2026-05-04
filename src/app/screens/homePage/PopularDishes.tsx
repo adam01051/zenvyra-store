@@ -23,10 +23,10 @@ const popularDishesRetriever = createSelector(
 export default function PopularDishes() {
 	const { popularDishes } = useSelector(popularDishesRetriever);
 	return (
-		<div className="popular-dishes-frame">
+		<div className="popular-item-frame">
 			<Container>
 				<Stack className="popular-section">
-					<Box className="category-title">TOP SELLING</Box> 
+					<Box className="category-title">TOP SELLING</Box>
 
 					<Stack className="cards-frame">
 						{popularDishes.length !== 0 ? (
@@ -50,7 +50,7 @@ export default function PopularDishes() {
 													gap: 0.5,
 													py: 1.5,
 													px: "var(--Card-padding)",
-													
+
 													background: "#F0EEED",
 												}}
 											>
@@ -65,7 +65,7 @@ export default function PopularDishes() {
 												>
 													{product.productName}
 												</Typography>
-													<Stack flexDirection="row" alignItems="center" gap={1}>
+												<Stack flexDirection="row" alignItems="center" gap={1}>
 													<Typography
 														sx={{
 															fontSize: "24px",
@@ -81,8 +81,6 @@ export default function PopularDishes() {
 													flexDirection={"row"}
 													justifyContent={"space-between"}
 												>
-												
-
 													<Typography
 														sx={{
 															fontWeight: "md",
@@ -97,16 +95,13 @@ export default function PopularDishes() {
 														/>
 													</Typography>
 												</Stack>
-											
 											</CardOverflow>
 										</Card>
 									</CssVarsProvider>
 								);
 							})
 						) : (
-							<Box className={"no-data"}>
-								New products are not available!
-							</Box>
+							<Box className={"no-data"}>New products are not available!</Box>
 						)}
 					</Stack>
 				</Stack>

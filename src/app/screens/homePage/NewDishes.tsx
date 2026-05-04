@@ -27,7 +27,9 @@ export default function NewDishes() {
 		<div className="new-products-frame">
 			<Container>
 				<Stack className="main">
-					<Box className="category-title">FRESH MENU</Box>
+					<Box sx={{ width: "130px" }} className="category-title">
+						FRESH MENU
+					</Box>
 
 					<Stack className="cards-frame">
 						{newDishes.length !== 0 ? (

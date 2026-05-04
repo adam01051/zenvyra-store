@@ -202,7 +202,7 @@ align-items: center;
   padding-bottom: 60px;
 }
 
-.homepage .main {
+.homepage .new-products-frame  .main {
   margin-top: 60px;
   display: flex;
   flex-direction: column;
@@ -210,12 +210,12 @@ align-items: center;
   width: 100%;
 }
 
-.homepage .new-products-frame .category-title {
+.homepage .new-products-frame .main .category-title {
   width: auto;
   height: auto;
   position: relative;
   font-size: 48px;
-  display: inline-block;
+  display: flex;
   font-family: "Integral CF", sans-serif;
   color: #000000;
   text-align: center;
@@ -223,6 +223,7 @@ align-items: center;
   line-height: normal;
   font-weight: 800;
   letter-spacing: -1px;
+
 }
 
 .homepage .new-products-frame .main .cards-frame {
@@ -231,7 +232,7 @@ align-items: center;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-    background-color: transparent;
+background-color: transparent;
   gap: 20px;
 }
 
@@ -320,7 +321,7 @@ align-items: center;
    POPULAR DISHES — "Top Selling"
 ══════════════════════════════════════════════════════════ */
 
-.homepage .popular-dishes-frame {
+.homepage .popular-item-frame {
   width: 100%;
   height: auto;
   min-height: 580px;
@@ -329,7 +330,7 @@ align-items: center;
   padding-bottom: 60px;
 }
 
-.homepage .popular-dishes-frame .popular-section {
+.homepage .popular-item-frame .popular-section {
   margin-top: 60px;
   display: flex;
   flex-direction: column;
@@ -338,7 +339,7 @@ align-items: center;
   width: 100%;
 }
 
-.homepage .popular-dishes-frame .popular-section .category-title {
+.homepage .popular-item-frame .popular-section .category-title {
   width: auto;
   height: auto;
   position: relative;
@@ -353,7 +354,7 @@ align-items: center;
   letter-spacing: -1px;
 }
 
-.homepage .popular-dishes-frame .popular-section .cards-frame {
+.homepage .popular-item-frame .popular-section .cards-frame {
   width: 100%;
   margin-top: 43px;
   display: flex;
@@ -364,7 +365,7 @@ align-items: center;
 }
 
 /* Card */
-.homepage .popular-dishes-frame .cards-frame .card {
+.homepage .popular-item-frame .cards-frame .card {
   min-width: 300px;
   min-height: 420px;
   cursor: pointer;
@@ -376,38 +377,38 @@ align-items: center;
   transition: transform 0.2s ease;
 }
 
-.homepage .popular-dishes-frame .cards-frame .card:hover {
+.homepage .popular-item-frame .cards-frame .card:hover {
   transform: translateY(-4px);
 }
 
 /* No dark overlay on light bg */
-.homepage .popular-dishes-frame .cards-frame .card .card-cover {
+.homepage .popular-item-frame .cards-frame .card .card-cover {
   background: none;
 }
 
 /* CardOverflow bottom — already styled via sx in TSX,
    these back it up at the CSS level */
-.homepage .popular-dishes-frame .cards-frame .card [class*="CardOverflow"] {
+.homepage .popular-item-frame .cards-frame .card [class*="CardOverflow"] {
   background: #f0eeed !important;
   border-top: 1px solid #e8e8e8 !important;
 }
 
 /* Product name */
-.homepage .popular-dishes-frame .cards-frame .card [class*="CardOverflow"] .MuiTypography-root {
+.homepage .popular-item-frame .cards-frame .card [class*="CardOverflow"] .MuiTypography-root {
   font-family: "Satoshi", sans-serif !important;
   color: #000000 !important;
   text-align: left;
 }
 
 /* Views count */
-.homepage .popular-dishes-frame .cards-frame .card .MuiTypography-root[class*="neutral"] {
+.homepage .popular-item-frame .cards-frame .card .MuiTypography-root[class*="neutral"] {
   color: rgba(0, 0, 0, 0.45) !important;
   font-family: "Satoshi", sans-serif !important;
   font-size: 14px !important;
 }
 
 /* No data */
-.homepage .popular-dishes-frame .no-data {
+.homepage .popular-item-frame .no-data {
   width: 100%;
   height: 300px;
   display: flex;
@@ -468,7 +469,6 @@ height: 550px;
   flex-direction: column;
   align-items: center;
   
- 
   width: 100%;
 
 
@@ -489,12 +489,7 @@ font-size: 36px;
 font-style: normal;
 font-weight: 700;
 line-height: 43px;
-
 margin-bottom: 40px;
-
-
-
-
 
 }
 
