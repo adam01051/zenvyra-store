@@ -5,8 +5,9 @@ import NewDishes from "./NewDishes";
 import Advertisement from "./Advertisement";
 import ActiveUsers from "./ActiveUsers";
 
+// @ts-ignore: allow side-effect CSS import without module declarations
 import "../../../css/home.css";
-import Events from "./Events";
+
 
 import { useDispatch } from "react-redux";
 import { Dispatch } from "@reduxjs/toolkit";
@@ -80,7 +81,6 @@ useEffect(() => {
 			<Advertisement />
 			<ActiveUsers />
 
-			<Events />
 		</div>
 	);
 }

@@ -6,6 +6,8 @@ import HomePage from "./screens/homePage";
 import HomeNavbar from "./components/headers/HomeNavbar";
 import OtherNavbar from "./components/headers/OtherNavbar";
 import Footer from "./components/footer";
+
+// @ts-ignore : allow side-effect CSS import without module declarations
 import "../css/app.css";
 import "../css/navbar.css";
 import "../css/footer.css";

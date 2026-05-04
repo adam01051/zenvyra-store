@@ -43,7 +43,7 @@ export default function OtherNavbar(props: OtherNavbarProps) {
 	const { authMember } = useGlobals();
 	return (
 		<div className="other-navbar">
-			<Container className="navbar-container">
+			<div className="navbar-container">
 				<Stack className="menu">
 					<Box>
 						<NavLink to="/">
@@ -157,7 +157,7 @@ export default function OtherNavbar(props: OtherNavbarProps) {
 						</Menu>
 					</Stack>
 				</Stack>
-			</Container>
+			</div>
 		</div>
 	);
 }
