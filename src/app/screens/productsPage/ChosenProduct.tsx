@@ -5,9 +5,13 @@ import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
 import Divider from "../../components/divider";
 import Button from "@mui/material/Button";
 import Rating from "@mui/material/Rating";
+// @ts-ignore
 import "swiper/css";
+// @ts-ignore
 import "swiper/css/free-mode";
+// @ts-ignore
 import "swiper/css/navigation";
+// @ts-ignore
 import "swiper/css/thumbs";
 import { FreeMode, Navigation, Thumbs } from "swiper";
 
@@ -53,6 +57,7 @@ export default function ChosenProduct(props: ChosenProductProps) {
 	const { setRestaurant, setChosenProduct } = actionDispatch(useDispatch());
 	const { chosenProduct } = useSelector(chosenProductRetriever);
 	const { restaurant } = useSelector(restaurantRetriever);
+	const [selectedSize, setSelectedSize] = React.useState<string>("");
 
 	useEffect(() => {
 		const product = new ProductService();
@@ -95,8 +100,11 @@ export default function ChosenProduct(props: ChosenProductProps) {
 						<strong className={"product-name"}>
 							{chosenProduct?.productName}
 						</strong>
-						<span className={"resto-name"}>{restaurant?.memberNick}</span>
-						<span className={"resto-name"}>{restaurant?.memberPhone}</span>
+						
+						<span className={"resto-name"}>
+							{chosenProduct?.productLeftCount} items left
+						</span>
+
 						<Box className={"rating-box"}>
 							<Rating name="half-rating" defaultValue={2.5} precision={0.5} />
 							<div className={"evaluation-box"}>
@@ -106,6 +114,19 @@ export default function ChosenProduct(props: ChosenProductProps) {
 								</div>
 							</div>
 						</Box>
+						<div className="sidebar-sizes">
+							{["Small", "Medium", "Large", "X-Large"].map((size) => (
+								<div
+									key={size}
+									className={`size-pill ${
+										selectedSize === size ? "active" : ""
+									}`}
+									onClick={() => setSelectedSize(size)}
+								>
+									{size}
+								</div>
+							))}
+						</div>
 						<p className={"product-desc"}>
 							{chosenProduct?.productDesc
 								? chosenProduct.productDesc

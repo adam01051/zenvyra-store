@@ -1,343 +1,385 @@
+/* =====================================================
+   USER PAGE — MATCHING LIGHT GRAY / BLACK-WHITE THEME
+===================================================== */
+
 .user-page {
 	width: 100%;
-	height: auto;
+	min-height: 100vh;
+	background: #ffffff;
+	padding: 50px 0 80px;
 	display: flex;
-	background: #f8f8ff;
 }
 
+/* MUI TABS FIX */
 .user-page .css-heg063-MuiTabs-flexContainer {
 	flex-direction: column;
+	gap: 10px;
 }
 
 .user-page .css-mn3ro6-MuiTabs-indicator {
-	height: 0px;
-	width: 0px;
+	display: none;
 }
 
 .user-page .css-1ujnqem-MuiTabs-root {
 	width: 100%;
 }
 
+/* =====================================================
+   MAIN LAYOUT
+===================================================== */
+
 .user-page .my-page-frame {
 	width: 100%;
-	height: auto;
 	display: flex;
 	flex-direction: row;
-	padding: 50px 0 50px 0;
+	align-items: flex-start;
+	gap: 28px;
 }
 
-.my-page-frame .my-page-left {
+/* =====================================================
+   LEFT SIDE
+===================================================== */
+
+.user-page .my-page-left {
 	width: 70%;
-	height: auto;
 	display: flex;
 	flex-direction: column;
 }
 
-.my-page-left .menu-name {
-	width: 100%;
+/* PAGE TITLE */
+.user-page .my-page-left .menu-name {
 	height: 70px;
 	display: flex;
-	justify-content: center;
-	border-bottom: 1px solid #f8f8ff;
-	font-family: 'Poppins';
-	font-style: normal;
-	font-weight: 600;
-	font-size: 45px;
-	color: #f8f8ff;
+	align-items: center;
+	padding: 0 20px;
+	font-family: "Integral CF", sans-serif;
+	font-size: 36px;
+	font-weight: 800;
+	color: #000000;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+	margin-bottom: 20px;
 }
 
-.my-page-left .menu-content {
-	margin-top: 10px;
+/* CONTENT PANELS */
+.user-page .menu-content,
+.user-page .write-content,
+.user-page .post-content {
 	width: 100%;
-	height: auto;
 	display: flex;
 	flex-direction: column;
+	gap: 20px;
 }
 
-.my-page-left .write-content {
-	margin-top: 10px;
-	width: 100%;
-	height: auto;
-	display: flex;
-	flex-direction: column;
-}
+/* =====================================================
+   RIGHT SIDE
+===================================================== */
 
-
-.user-page .menu-content .post-content {
-	margin-top: 10px;
-	width: 100%;
-	height: auto;
-	display: flex;
-	flex-direction: column;
-}
-
-.my-page-frame .my-page-right {
-	margin-left: 30px;
-	
+.user-page .my-page-right {
 	width: 30%;
-	height: auto;
 	display: flex;
 	flex-direction: column;
+	gap: 24px;
+	padding-top: 90px;
 }
 
+/* =====================================================
+   PROFILE CARD
+===================================================== */
 
 .user-page .order-info-box {
 	position: relative;
-	padding: 20px;
+	padding: 28px;
 	width: 100%;
-	height: auto;
+	background: #f3f4f6;
+	border-radius: 10px;
+	border: 1px solid rgba(0, 0, 0, 0.05);
+	box-shadow: 0 10px 24px rgba(0, 0, 0, 0.035);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	background: #f6f2ff;
-	box-shadow: 15px 14px 4px rgba(0, 0, 0, 0.25), inset -1px 0px 16px 13px rgb(24 23 112 / 20%);
-	border-radius: 16px;
 }
 
+/* SETTINGS ICON */
 .user-page .order-info-box .settings-btn {
 	position: absolute;
-	top: 6%;
-	right: 19%;
+	top: 20px;
+	right: 20px;
 	cursor: pointer;
+	opacity: 0.7;
+	transition: 0.2s;
 }
 
-.user-page .order-info-box .order-user-img {
+.user-page .order-info-box .settings-btn:hover {
+	opacity: 1;
+}
+
+/* USER IMAGE */
+.user-page .order-user-img {
 	position: relative;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
 
-.user-page .order-info-box .order-user-img .order-user-avatar {
-	width: 150px;
-	height: 150px;
-	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-	border-radius: 37px;
+.user-page .order-user-avatar {
+	width: 130px;
+	height: 130px;
+	border-radius: 50%;
+	object-fit: cover;
 }
 
-.user-page .order-info-box .order-user-icon-box {
+/* SMALL CAMERA ICON */
+.user-page .order-user-icon-box {
 	position: absolute;
-	padding: 5px;
-	width: 37px;
-	height: 37px;
-	top: 81%;
 	right: 0;
+	bottom: 0;
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	background: #ffffff;
 	display: flex;
-	background: rgb(209 209 209 / 33%);
-	border-radius: 37px;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid rgba(0, 0, 0, 0.08);
 }
 
-.user-page .order-info-box .order-user-name {
-	margin-top: 10px;
-	font-family: 'Commissioner';
-	font-style: normal;
-	font-weight: 500;
+/* NAME */
+.user-page .order-user-name {
+	margin-top: 18px;
+	font-family: "Integral CF", sans-serif;
 	font-size: 28px;
-	line-height: 36px;
-	color: #08090d;
+	font-weight: 800;
+	color: #000000;
+	line-height: 1;
 }
 
-.user-page .order-info-box .order-user-prof {
-	font-family: 'Commissioner';
-	font-style: normal;
-	font-weight: 500;
-	font-size: 20px;
-	line-height: 36px;
-	color: #a1a1a1;
+/* ROLE */
+.user-page .order-user-prof {
+	margin-top: 8px;
+	font-family: "Satoshi", sans-serif;
+	font-size: 15px;
+	font-weight: 600;
+	color: rgba(0, 0, 0, 0.5);
 }
 
-.user-page .order-info-box .user-media-box {
-	margin-top: 10px;
-	width: 60%;
+/* SOCIAL ICONS */
+.user-page .user-media-box {
+	margin-top: 18px;
+	width: 65%;
 	display: flex;
-	flex-direction: row;
 	justify-content: space-between;
 }
 
-.user-page .order-info-box .user-desc {
-	margin-top: 30px;
-	width: 90%;
-	display: flex;
-	justify-content: center;
-	font-family: 'DM Sans';
-	font-style: normal;
-	font-weight: 400;
-	font-size: 16px;
-	line-height: 24px;
-	color: #616164;
+/* DESCRIPTION */
+.user-page .user-desc {
+	margin-top: 24px;
+	text-align: center;
+	font-family: "Satoshi", sans-serif;
+	font-size: 15px;
+	line-height: 1.6;
+	color: rgba(0, 0, 0, 0.7);
 }
 
-.user-page .order-info-box .css-1e3kzd4-MuiButtonBase-root-MuiButton-root {
-	margin-top: 15px;
-	min-width: 90%;
-	height: 44px;
-	text-transform: capitalize;
-	font-style: normal;
-	font-weight: 600;
-	font-size: 25px;
-	line-height: 38px;
-	color: #f8f8ff;
+/* PROFILE BUTTON */
+.user-page .order-info-box button {
+	margin-top: 20px;
+	width: 100%;
+	height: 48px;
+	border-radius: 10px !important;
+	background: #000000 !important;
+	color: #ffffff !important;
+	font-family: "Satoshi", sans-serif !important;
+	font-size: 15px !important;
+	font-weight: 700 !important;
+	text-transform: none !important;
+	box-shadow: none !important;
+}
+
+.user-page .order-info-box button:hover {
+	background: #1a1a1a !important;
+}
+
+/* =====================================================
+   MENU ITEMS
+===================================================== */
+
+.user-page .menu-box {
+	display: flex;
+	align-items: center;
+	padding: 14px 18px;
+	border-radius: 10px;
+	background: #f3f4f6;
+	cursor: pointer;
+	transition: 0.2s;
+}
+
+.user-page .menu-box:hover {
+	background: #ececec;
 }
 
 .user-page .menu-box img {
-	width: 25px;
+	width: 22px;
+	height: 22px;
 }
 
 .user-page .menu-box span {
-	margin-left: 30px;
-	font-family: 'Poppins';
-	font-style: normal;
-	font-weight: 600;
-	font-size: 25px;
-	line-height: 38px;
+	margin-left: 16px;
+	font-family: "Satoshi", sans-serif;
+	font-size: 17px;
+	font-weight: 700;
 	color: #000000;
 }
 
+/* =====================================================
+   SETTINGS FORM
+===================================================== */
+
 .user-page .settings {
-	width: 95%;
-	height: auto;
+	width: 100%;
 	display: flex;
 	flex-direction: column;
+	gap: 20px;
 }
 
 .user-page .settings .input-frame {
-	width: 100%;
-	height: auto;
 	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
+	gap: 16px;
 }
 
 .user-page .settings .short-input {
-	width: 49%;
-	height: auto;
+	width: 50%;
 	display: flex;
 	flex-direction: column;
 }
 
 .user-page .settings .long-input {
 	width: 100%;
-	height: auto;
 	display: flex;
 	flex-direction: column;
 }
+
 .user-page .settings .spec-label {
-	font-family: 'Source Serif Pro';
-	font-style: normal;
-	font-weight: 400;
-	font-size: 16px;
-	line-height: 25px;
-	color: #f8f8ff;
+	margin-bottom: 8px;
+	font-family: "Satoshi", sans-serif;
+	font-size: 14px;
+	font-weight: 700;
+	color: #000000;
+}
+
+/* INPUTS */
+.user-page .settings .spec-input,
+.user-page .settings .spec-textarea {
+	width: 100%;
+	border-radius: 10px;
+	border: 1px solid rgba(0, 0, 0, 0.08);
+	background: #f3f4f6;
+	padding: 0 16px;
+	font-family: "Satoshi", sans-serif;
+	font-size: 14px;
+	color: #000000;
+	outline: none;
 }
 
 .user-page .settings .spec-input {
-	position: relative;
-	margin-top: 10px;
-	padding-left: 20px;
-	width: 100%;
-	height: 54px;
-	border: none;
-	background: #f7f7f7;
-	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-	border-radius: 5px;
-	font-family: 'GT Walsheim Pro';
-	font-style: normal;
-	font-weight: 400;
-	font-size: 15px;
-	line-height: 26px;
-	color: #4f547b;
+	height: 48px;
 }
 
 .user-page .settings .spec-textarea {
-	position: relative;
-	margin-top: 10px;
-	padding: 20px;
-	width: 100%;
-	height: 200px;
-	border: none;
-	background: #f7f7f7;
-	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-	border-radius: 5px;
-	font-family: 'GT Walsheim Pro';
-	font-style: normal;
-	font-weight: 400;
-	font-size: 15px;
-	line-height: 26px;
-	color: #4f547b;
+	height: 180px;
+	padding-top: 14px;
+	resize: none;
 }
 
-.user-page .settings .member-media-frame {
-	margin-top: 25px;
-	position: relative;
-	padding: 10px;
-	width: 100%;
-	height: auto;
+/* =====================================================
+   MEDIA SECTION
+===================================================== */
+
+.user-page .member-media-frame {
 	display: flex;
-	border-radius: 5px;
+	align-items: center;
+	gap: 20px;
+	background: #f3f4f6;
+	padding: 18px;
+	border-radius: 10px;
 }
 
-.user-page .settings .member-media-frame .mb-image {
-	width: 100px;
-	height: 100px;
+.user-page .member-media-frame .mb-image {
+	width: 90px;
+	height: 90px;
 	border-radius: 50%;
+	object-fit: cover;
+	
 }
 
-.user-page .settings .media_change-box {
-	position: relative;
-	margin-left: 20px;
-	width: auto;
-	height: 100%;
+.user-page .media_change-box {
 	display: flex;
 	flex-direction: column;
+	gap: 10px;
 }
 
-.user-page .settings .media-change-box span {
-	font-family: 'GT Walsheim Pro';
-	font-style: normal;
-	font-weight: 400;
-	font-size: 16px;
-	line-height: 18px;
-	color: #140342;
-}
-
-.user-page .settings .media-change-box p {
-	margin: 10px 0px 14px 0px;
-	font-family: 'GT Walsheim Pro';
-	font-style: normal;
-	font-weight: 400;
-	font-size: 14px;
-	line-height: 16px;
-	color: #4f547b;
-}
-
-.user-page .settings .up-del-box {
-	position: relative;
-	width: 37px;
-	height: 37px;
+.user-page .up-del-box {
+	width: 38px;
+	height: 38px;
+	border-radius: 10px;
+	background: #ffffff;
+	border: 1px solid rgba(0, 0, 0, 0.08);
 	display: flex;
-	background: #cbcbcb;
-	border-radius: 8px;
-	justify-content: center;
 	align-items: center;
+	justify-content: center;
+	cursor: pointer;
 }
 
-.user-page .settings .up-del-box input {
-	position: absolute;
-	width: 20px;
-	height: 16px;
-	padding: 0;
-	background: red;
-	margin: -1px;
-	overflow: hidden;
-	clip: rect(0, 0, 0, 0);
-	border: 0;
+.user-page .up-del-box input {
+	display: none;
 }
 
-.user-page .settings .save-box {
+/* SAVE BUTTON */
+.user-page .save-box {
 	display: flex;
 	justify-content: flex-end;
-	margin-top: 25px;
+	margin-top: 20px;
 }
-.user-page .settings .member-media-frame .mb-image{
-	margin-right: 30px;
+
+.user-page .save-box button {
+	height: 48px;
+	padding: 0 24px !important;
+	border-radius: 10px !important;
+	background: #000000 !important;
+	color: #ffffff !important;
+	font-family: "Satoshi", sans-serif !important;
+	font-weight: 700 !important;
+	text-transform: none !important;
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 1100px) {
+	.user-page .my-page-frame {
+		flex-direction: column-reverse;
+	}
+
+	.user-page .my-page-left,
+	.user-page .my-page-right {
+		width: 100%;
+	}
+}
+
+@media (max-width: 768px) {
+	.user-page {
+		padding: 30px 14px 60px;
+	}
+
+	.user-page .my-page-left .menu-name {
+		font-size: 28px;
+	}
+
+	.user-page .settings .input-frame {
+		flex-direction: column;
+	}
+
+	.user-page .settings .short-input {
+		width: 100%;
+	}
 }

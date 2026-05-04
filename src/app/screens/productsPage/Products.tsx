@@ -261,15 +261,12 @@ return (
 
 						<div className="sidebar-sizes">
 							{[
-								"XX-Small",
-								"X-Small",
+							
 								"Small",
 								"Medium",
 								"Large",
 								"X-Large",
-								"XX-Large",
-								"3X-Large",
-								"4X-Large",
+								
 							].map((size) => (
 								<div
 									key={size}
@@ -298,11 +295,7 @@ return (
 							products.map((product: Product) => {
 								const imagePath = `${serverApi}/${product.productImages[0]}`;
 
-								const sizeVolume =
-									product.productCollection === ProductCollection.DRINK
-										? product.productVolume + "l"
-										: product.productSize + " size";
-
+						
 								return (
 									<Stack
 										key={product._id}
@@ -315,7 +308,7 @@ return (
 												backgroundImage: `url(${imagePath})`,
 											}}
 										>
-											<div className={"product-sale"}>{sizeVolume}</div>
+							
 
 											<Button
 												className={"shop-btn"}
@@ -332,7 +325,7 @@ return (
 												}}
 											>
 												<img
-													src={"/icons/shopping-cart.svg"}
+													src={"/icons/frame.svg"}
 													alt="shopping"
 													style={{
 														display: "flex",
