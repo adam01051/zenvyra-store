@@ -65,19 +65,97 @@ export default function OrdersPage() {
 				<Stack className={"order-left"}>
 					<TabContext value={value}>
 						<Box className={"order-nav-frame"}>
-							<Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+							<Box
+								sx={{
+									width: "95%",
+									borderBottom: "1px solid rgba(0,0,0,0.08)",
+									background: "#f3f4f6",
+									borderRadius: "12px",
+									padding: "8px",
+								}}
+							>
 								<Tabs
 									value={value}
 									onChange={handleChange}
-									aria-label="basic tabs "
+									aria-label="basic tabs"
 									className={"table-list"}
+									TabIndicatorProps={{
+										style: { display: "none" },
+									}}
+									sx={{
+										minHeight: "52px",
+										"& .MuiTabs-flexContainer": {
+											gap: "10px",
+											justifyContent: "space-between",
+										},
+									}}
 								>
-									<Tab label="PAUSED ORDERS" value={"1"} />
-									<Tab label="PROCESS ORDERS" value={"2"} />
-									<Tab label="FINISHED ORDERS" value={"3"} />
+									<Tab
+										label="PAUSED ORDERS"
+										value={"1"}
+										sx={{
+											flex: 1,
+											minHeight: "44px",
+											borderRadius: "10px",
+											fontFamily: "Satoshi",
+											fontSize: "14px",
+											fontWeight: 700,
+											textTransform: "none",
+											color: "rgba(0,0,0,0.55)",
+											background: "#ffffff",
+											transition: "0.1s",
+											"&.Mui-selected": {
+												background: "#000000",
+												color: "#ffffff",
+											},
+										}}
+									/>
+
+									<Tab
+										label="PROCESS ORDERS"
+										value={"2"}
+										sx={{
+											flex: 1,
+											minHeight: "44px",
+											borderRadius: "10px",
+											fontFamily: "Satoshi",
+											fontSize: "14px",
+											fontWeight: 700,
+											textTransform: "none",
+											color: "rgba(0,0,0,0.55)",
+											background: "#ffffff",
+											transition: "0.2s",
+											"&.Mui-selected": {
+												background: "#000000",
+												color: "#ffffff",
+											},
+										}}
+									/>
+
+									<Tab
+										label="FINISHED ORDERS"
+										value={"3"}
+										sx={{
+											flex: 1,
+											minHeight: "44px",
+											borderRadius: "10px",
+											fontFamily: "Satoshi",
+											fontSize: "14px",
+											fontWeight: 700,
+											textTransform: "none",
+											color: "rgba(0,0,0,0.55)",
+											background: "#ffffff",
+											transition: "0.2s",
+											"&.Mui-selected": {
+												background: "#000000",
+												color: "#ffffff",
+											},
+										}}
+									/>
 								</Tabs>
 							</Box>
 						</Box>
+
 						<Stack className="order-main-content">
 							<PausedOrders setValue={setValue} />
 							<ProcessOrders setValue={setValue} />
