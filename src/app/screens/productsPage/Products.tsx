@@ -46,7 +46,7 @@ export default function Products(props: ProductsProps) {
 		page: 1,
 		limit: 3,
 		order: "createdAt",
-		productCollection: ProductCollection.DISH,
+		productCollection: ProductCollection.TSHIRT,
 		search: "",
 	});
 	const [searchText, setSearchText] = useState<string>("");
@@ -170,123 +170,82 @@ return (
 						need to change the category to  tshirts  jeans  hoodies  and shorts and delete one of them
 						==========================================
 						*/}
-						<Button
-							variant={"contained"}
-							color={
-								productSearch.productCollection === ProductCollection.DISH
-									? "primary"
-									: "secondary"
-							}
-							className={"order"}
-							onClick={() => searchCollectionHandler(ProductCollection.DISH)}
-						>
-							DISH
-						</Button>
 
-						<Button
-							variant={"contained"}
-							color={
-								productSearch.productCollection === ProductCollection.SALAD
-									? "primary"
-									: "secondary"
-							}
-							className={"order"}
-							onClick={() => searchCollectionHandler(ProductCollection.SALAD)}
-						>
-							SALAD
-						</Button>
-
-						<Button
-							variant={"contained"}
-							color={
-								productSearch.productCollection === ProductCollection.DRINK
-									? "primary"
-									: "secondary"
-							}
-							className={"order"}
-							onClick={() => searchCollectionHandler(ProductCollection.DRINK)}
-						>
-							DRINK
-						</Button>
-
-						<Button
-							variant={"contained"}
-							color={
-								productSearch.productCollection === ProductCollection.DESSERT
-									? "primary"
-									: "secondary"
-							}
-							className={"order"}
-							onClick={() => searchCollectionHandler(ProductCollection.DESSERT)}
-						>
-							DESSERT
-						</Button>
-
-						<Button
-							variant={"contained"}
-							color={
-								productSearch.productCollection === ProductCollection.OTHER
-									? "primary"
-									: "secondary"
-							}
-							className={"order"}
-							onClick={() => searchCollectionHandler(ProductCollection.OTHER)}
-						>
-							OTHER
-						</Button>
 
 						{/* TYPE */}
-						<div className="sidebar-divider"></div>
+				
 						<div className="sidebar-section-title">Dress Style</div>
 
-						<div className="sidebar-type-list">
-							{["T-Shirts", "Shorts", "Shirts", "Hoodie", "Jeans"].map(
-								(type) => (
-									<div
-										key={type}
-										className={`type-item ${
-											selectedType === type ? "active" : ""
-										}`}
-										onClick={() => setSelectedType(type)}
-									>
-										{type}
-									</div>
-								),
-							)}
-						</div>
-
-						{/* SIZE */}
-						<div className="sidebar-divider"></div>
-						<div className="sidebar-section-title">Size</div>
-
-						<div className="sidebar-sizes">
-							{[
-							
-								"Small",
-								"Medium",
-								"Large",
-								"X-Large",
-								
-							].map((size) => (
-								<div
-									key={size}
-									className={`size-pill ${
-										selectedSize === size ? "active" : ""
-									}`}
-									onClick={() => setSelectedSize(size)}
-								>
-									{size}
-								</div>
-							))}
-						</div>
+						<Button
+							variant={"contained"}
+							color={
+								productSearch.productCollection === ProductCollection.TSHIRT
+									? "primary"
+									: "secondary"
+							}
+							className={"order"}
+							onClick={() => searchCollectionHandler(ProductCollection.TSHIRT)}
+						>
+							TSHIRT
+						</Button>
 
 						<Button
-							variant="contained"
-							className="apply-filter-btn"
-							onClick={searchProductHandler}
+							variant={"contained"}
+							color={
+								productSearch.productCollection === ProductCollection.HOODIE
+									? "primary"
+									: "secondary"
+							}
+							className={"order"}
+							onClick={() => searchCollectionHandler(ProductCollection.HOODIE)}
 						>
-							Apply Filter
+							HOODIE
 						</Button>
+
+						<Button
+							variant={"contained"}
+							color={
+								productSearch.productCollection === ProductCollection.JEANS
+									? "primary"
+									: "secondary"
+							}
+							className={"order"}
+							onClick={() => searchCollectionHandler(ProductCollection.JEANS)}
+						>
+							JEANS
+						</Button>
+
+						<Button
+							variant={"contained"}
+							color={
+								productSearch.productCollection === ProductCollection.JACKET
+									? "primary"
+									: "secondary"
+							}
+							className={"order"}
+							onClick={() => searchCollectionHandler(ProductCollection.JACKET)}
+						>
+							JACKET
+						</Button>
+
+						<Button
+							variant={"contained"}
+							color={
+								productSearch.productCollection === ProductCollection.SHOES
+									? "primary"
+									: "secondary"
+							}
+							className={"order"}
+							onClick={() => searchCollectionHandler(ProductCollection.SHOES)}
+						>
+							SHOES
+						</Button>
+
+					
+
+					
+
+						
 					</div>
 
 					{/* PRODUCTS */}
@@ -310,28 +269,7 @@ return (
 										>
 							
 
-											<Button
-												className={"shop-btn"}
-												onClick={(e) => {
-													e.stopPropagation();
-
-													onAdd({
-														_id: product._id,
-														quantity: 1,
-														name: product.productName,
-														price: product.productPrice,
-														image: product.productImages[0],
-													});
-												}}
-											>
-												<img
-													src={"/icons/frame.svg"}
-													alt="shopping"
-													style={{
-														display: "flex",
-													}}
-												/>
-											</Button>
+											
 
 											<Button
 												className={"view-btn"}

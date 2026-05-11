@@ -14,11 +14,11 @@ export interface AppRootState{
 
 /** Homepage */
 export interface HomePageState{
-    popularDishes: Product[];
-    newDishes: Product[];
+    popularProducts: Product[];
+    newProducts: Product[];
     topUsers: Member[];
 }
-/** Product */
+
 
 
 export interface ProductPageStage{

@@ -4,6 +4,7 @@ import { SyntheticEvent, useEffect, useState } from "react";
 import PausedOrders from "./PausedOrders";
 import ProcessOrders from "./ProcessOrders";
 import FinishedOrders from "./FinishedOrders";
+//@ts-ignore
 import "../../../css/orders.css";
 import Divider from "../../components/divider";
 import { Order, OrderInquiry } from "../../../lib/types/order";

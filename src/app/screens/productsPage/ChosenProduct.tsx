@@ -30,133 +30,157 @@ import { serverApi } from "../../../lib/config";
 import { CartItem } from "../../../lib/types/search";
 
 const actionDispatch = (dispatch: Dispatch) => ({
-	setRestaurant: (data: Member) => dispatch(setRestaurant(data)),
-	setChosenProduct: (data: Product) => dispatch(setChosenProduct(data)),
+  setRestaurant: (data: Member) => dispatch(setRestaurant(data)),
+  setChosenProduct: (data: Product) => dispatch(setChosenProduct(data)),
 });
 
 const chosenProductRetriever = createSelector(
-	retriveChosenProduct,
-	(chosenProduct) => ({
-		chosenProduct,
-	}),
+  retriveChosenProduct,
+  (chosenProduct) => ({
+    chosenProduct,
+  }),
 );
 
-const restaurantRetriever = createSelector(
-	retriveRestaurant,
-	(restaurant) => ({
-		restaurant,
-	}),
-);
+const restaurantRetriever = createSelector(retriveRestaurant, (restaurant) => ({
+  restaurant,
+}));
 interface ChosenProductProps {
-	onAdd: (items: CartItem) => void;
-} 
+
+  onAdd: (items: CartItem) => void;
+  
+  
+}
 
 export default function ChosenProduct(props: ChosenProductProps) {
-	const { onAdd } = props;
-	const { productId } = useParams<{ productId: string }>();
-	const { setRestaurant, setChosenProduct } = actionDispatch(useDispatch());
-	const { chosenProduct } = useSelector(chosenProductRetriever);
-	const { restaurant } = useSelector(restaurantRetriever);
-	const [selectedSize, setSelectedSize] = React.useState<string>("");
+  const { onAdd } = props;
+  const { productId } = useParams<{ productId: string }>();
+  const { setRestaurant, setChosenProduct } = actionDispatch(useDispatch());
+  const { chosenProduct } = useSelector(chosenProductRetriever);
+  const { restaurant } = useSelector(restaurantRetriever);
+  const [selectedSize, setSelectedSize] = React.useState<string>("");
 
-	useEffect(() => {
-		const product = new ProductService();
-		product
-			.getProduct(productId)
-			.then((data) => setChosenProduct(data))
-			.catch((err) => console.log(err));
-		const member = new MemberService();
-		member
-			.getRestaurant()
-			.then((data) => setRestaurant(data))
-			.catch((err) => console.log(err));
-	}, []);
+  useEffect(() => {
+    const product = new ProductService();
+    product
+      .getProduct(productId)
+      .then((data) => setChosenProduct(data))
+      .catch((err) => console.log(err));
+    const member = new MemberService();
+    member
+      .getRestaurant()
+      .then((data) => setRestaurant(data))
+      .catch((err) => console.log(err));
+  }, []);
 
-	if (!chosenProduct) return null;
-	return (
-		<div className={"chosen-product"}>
-			<Box className={"title"}>Product Detail</Box>
-			<Container className={"product-container"}>
-				<Stack className={"chosen-product-slider"}>
-					<Swiper
-						loop={true}
-						spaceBetween={10}
-						navigation={true}
-						modules={[FreeMode, Navigation, Thumbs]}
-						className="swiper-area"
-					>
-						{chosenProduct?.productImages.map((ele: string, index: number) => {
-							const imagePath = `${serverApi}/${ele}`;
-							return (
-								<SwiperSlide key={index}>
-									<img className="slider-image" src={imagePath} />
-								</SwiperSlide>
-							);
-						})}
-					</Swiper>
-				</Stack>
-				<Stack className={"chosen-product-info"}>
-					<Box className={"info-box"}>
-						<strong className={"product-name"}>
-							{chosenProduct?.productName}
-						</strong>
-						
-						<span className={"resto-name"}>
-							{chosenProduct?.productLeftCount} items left
-						</span>
+  if (!chosenProduct) return null;
+  return (
+    <div className={"chosen-product"}>
+      <Box className={"title"}>Product Detail</Box>
+      <Container className={"product-container"}>
+        {chosenProduct?.productImages.length > 1 && (
+          <Stack className="image-in">
+            <div className="images">
+              {chosenProduct.productImages.map((ele: string, index: number) => {
+                const imagePath = `${serverApi}/${ele}`;
 
-						<Box className={"rating-box"}>
-							<Rating name="half-rating" defaultValue={2.5} precision={0.5} />
-							<div className={"evaluation-box"}>
-								<div className={"product-view"}>
-									<RemoveRedEyeIcon sx={{ mr: "10px" }} />
-									<span>{chosenProduct?.productViews}</span>
-								</div>
-							</div>
-						</Box>
-						<div className="sidebar-sizes">
-							{["Small", "Medium", "Large", "X-Large"].map((size) => (
-								<div
-									key={size}
-									className={`size-pill ${
-										selectedSize === size ? "active" : ""
-									}`}
-									onClick={() => setSelectedSize(size)}
-								>
-									{size}
-								</div>
-							))}
-						</div>
-						<p className={"product-desc"}>
-							{chosenProduct?.productDesc
-								? chosenProduct.productDesc
-								: "No Description"}
-						</p>
-						<Divider height="1" width="100%" bg="#000000" />
-						<div className={"product-price"}>
-							<span>Price:</span>
-							<span>${chosenProduct.productPrice}</span>
-						</div>
-						<div className={"button-box"}>
-							<Button
-								variant="contained"
-								onClick={(e) => {
-									onAdd({
-										_id: chosenProduct._id,
-										quantity: 1,
-										name: chosenProduct.productName,
-										price: chosenProduct.productPrice,
-										image: chosenProduct.productImages[0],
-									});
-									e.stopPropagation();
-								}}
-							>
-								Add To Basket
-							</Button>
-						</div>
-					</Box>
-				</Stack>
-			</Container>
-		</div>
-	);
+                return (
+                  <div className="img-in-card" key={index}>
+                    <img src={imagePath} alt={`product-${index}`} />
+                  </div>
+                );
+              })}
+            </div>
+          </Stack>
+        )}
+        <Stack className={"chosen-product-slider"}>
+          <Swiper
+            loop={true}
+            spaceBetween={10}
+            navigation={true}
+            modules={[FreeMode, Navigation, Thumbs]}
+            className="swiper-area"
+          >
+            {chosenProduct?.productImages.map((ele: string, index: number) => {
+              const imagePath = `${serverApi}/${ele}`;
+              return (
+                <SwiperSlide key={index}>
+                  <img className="slider-image" src={imagePath} />
+                </SwiperSlide>
+              );
+            })}
+          </Swiper>
+        </Stack>
+        <Stack className={"chosen-product-info"}>
+          <Box className={"info-box"}>
+            <strong className={"product-name"}>
+              {chosenProduct?.productName}
+            </strong>
+
+            <span className={"resto-name"}>
+              {/*{chosenProduct?.productLeftCount} items left*/}
+            </span>
+
+            <Box className={"rating-box"}>
+              <Rating name="half-rating" defaultValue={2.5} precision={0.5} />
+              <div className={"evaluation-box"}>
+                <div className={"product-view"}>
+                  <RemoveRedEyeIcon sx={{ mr: "10px" }} />
+                  <span>{chosenProduct?.productViews}</span>
+                </div>
+              </div>
+            </Box>
+            <div className="sidebar-sizes">
+              {[
+                { label: "Small", value: "S" },
+                { label: "Medium", value: "M" },
+                { label: "Large", value: "L" },
+                { label: "X-Large", value: "XL" },
+                { label: "XX-Large", value: "XXL" },
+              ].map((size) => (
+                <div
+                  key={size.value}
+                  className={`size-pill ${
+                    selectedSize === size.value ? "active" : ""
+                  }`}
+                  onClick={() => setSelectedSize(size.value)}
+                >
+                  {size.label}
+                </div>
+              ))}
+            </div>
+            <p className={"product-desc"}>
+              {chosenProduct?.productDesc
+                ? chosenProduct.productDesc
+                : "No Description"}
+            </p>
+            <Divider height="1" width="100%" bg="#000000" />
+            <div className={"product-price"}>
+              <span>Price:</span>
+              <span>${chosenProduct.productPrice}</span>
+            </div>
+            <div className={"button-box"}>
+              <Button
+                variant="contained"
+                onClick={(e) => {
+                  onAdd({
+                    _id: chosenProduct._id,
+                    quantity: 1,
+                    name: chosenProduct.productName,
+                    price: chosenProduct.productPrice,
+                    image: chosenProduct.productImages[0],
+					selectedSize: selectedSize,
+
+
+                  });
+                  e.stopPropagation();
+                }}
+              >
+                Add To Basket
+              </Button>
+            </div>
+          </Box>
+        </Stack>
+      </Container>
+    </div>
+  );
 }

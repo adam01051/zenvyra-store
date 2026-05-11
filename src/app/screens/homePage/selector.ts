@@ -3,15 +3,15 @@ import { createSelector } from "@reduxjs/toolkit";
 
 export const selectHomePage = (state: AppRootState) => state.homePage;
 
-export const retrivePopularDishes = createSelector(
+export const retrivePopularProducts = createSelector(
 	selectHomePage,
-	(HomePage) => HomePage.popularDishes,
+	(HomePage) => HomePage.popularProducts,
 );
 
 
-export const retriveNewDishes = createSelector(
+export const retriveNewProducts = createSelector(
 	selectHomePage,
-	(HomePage) => HomePage.newDishes,
+	(HomePage) => HomePage.newProducts,
 );
 
 

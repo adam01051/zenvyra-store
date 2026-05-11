@@ -1,62 +1,57 @@
+import React from "react";
 import { Box, Container, Stack } from "@mui/material";
-
 import Card from "@mui/joy/Card";
+import CardCover from "@mui/joy/CardCover";
 import { CssVarsProvider } from "@mui/joy/styles";
+import CardContent from "@mui/joy/CardContent";
 import CardOverflow from "@mui/joy/CardOverflow";
 import Typography from "@mui/joy/Typography";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 
-import CardContent from "@mui/joy/CardContent";
 import { createSelector } from "@reduxjs/toolkit";
-import { retriveNewDishes } from "./selector";
+
 import { Product } from "../../../lib/types/product";
 
-import CardCover from "@mui/joy/CardCover";
+import { DefaultRootState, useSelector } from "react-redux";
 import { serverApi } from "../../../lib/config";
-import { useSelector } from "react-redux";
+import { retrivePopularProducts } from "./selector";
 
-const newDishesRetriever = createSelector(retriveNewDishes, (newDishes) => ({
-	newDishes,
-}));
-
-export default function NewDishes() {
-	const { newDishes } = useSelector(newDishesRetriever);
-
+const popularProductsRetriever = createSelector(
+	retrivePopularProducts,
+	(popularProducts) => ({ popularProducts }),
+);
+//neeed  to change  the name  from  popular dishes  to top selling  because  it  is  more  accurate
+export default function PopularProducts() {
+	const { popularProducts } = useSelector(popularProductsRetriever);
 	return (
-		<div className="new-products-frame">
+		<div className="popular-items-frame">
 			<Container>
-				<Stack className="main">
-					<Box sx={{ width: "130px" }} className="category-title">
-						NEW ARRIVALS
-					</Box>
+				<Stack className="popular-section">
+					<Box className="category-title">TOP SELLING</Box>
 
 					<Stack className="cards-frame">
-						{newDishes.length !== 0 ? (
-							newDishes.map((product: Product) => {
+						{popularProducts.length !== 0 ? (
+							popularProducts.map((product: Product) => {
 								const imagePath = `${serverApi}/${product.productImages[0]}`;
-
 								return (
 									<CssVarsProvider key={product._id}>
-										<Card className="card">
+										<Card className={"card"}>
 											<CardCover>
 												<img src={imagePath} alt="" />
 											</CardCover>
-
-											<CardCover className="card-cover" />
-
+											<CardCover className={"card-cover"} />
 											<CardContent
-												sx={{
-													justifyContent: "flex-end",
-												}}
-											/>
+												sx={{ justifyContent: "flex-end" }}
+											></CardContent>
 
 											<CardOverflow
 												sx={{
 													display: "flex",
-													flexDirection: "column",
+													flexDirection: "column", // ← stack vertically
 													gap: 0.5,
 													py: 1.5,
 													px: "var(--Card-padding)",
+
 													background: "#F0EEED",
 												}}
 											>
@@ -71,7 +66,6 @@ export default function NewDishes() {
 												>
 													{product.productName}
 												</Typography>
-
 												<Stack flexDirection="row" alignItems="center" gap={1}>
 													<Typography
 														sx={{
@@ -84,10 +78,9 @@ export default function NewDishes() {
 														${product.productPrice}
 													</Typography>
 												</Stack>
-
 												<Stack
-													flexDirection="row"
-													justifyContent="space-between"
+													flexDirection={"row"}
+													justifyContent={"space-between"}
 												>
 													<Typography
 														sx={{
@@ -113,7 +106,7 @@ export default function NewDishes() {
 								);
 							})
 						) : (
-							<Box className="no-data">New dishes are not available!</Box>
+							<Box className={"no-data"}>New products are not available!</Box>
 						)}
 					</Stack>
 				</Stack>
@@ -121,3 +114,4 @@ export default function NewDishes() {
 		</div>
 	);
 }
+
