@@ -17,6 +17,7 @@ class OrderService {
 					itemQuantity: cartItem.quantity,
 					itemPrice: cartItem.price,
 					productId: cartItem._id,
+					selectedSize: cartItem.selectedSize,
 				};
 			});
 			const url = this.path + "/order/create";

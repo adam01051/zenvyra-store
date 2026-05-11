@@ -295,6 +295,7 @@
   gap: 8px;
 }
 
+
 .products .sidebar-sizes .size-pill {
   height: 36px;
   padding: 0 16px;
@@ -827,13 +828,14 @@ height: 620px;
 	margin-top: auto;
 	width: 100%;
 	display: flex;
+  gap: 20px;
 }
 
 .products-page .chosen-product .button-box button {
-	width: 100%;
+	width: 70%;
 	height: 56px;
 	border-radius: 999px;
-	background: #000000 !important;
+	background: #000000 ;
 	color: #ffffff !important;
 	font-family: "Satoshi", sans-serif;
 	font-size: 17px;
@@ -841,10 +843,12 @@ height: 620px;
 	text-transform: none;
 	box-shadow: none !important;
 	transition: 0.25s ease;
+  padding-left:10px;
 }
 
+
 .products-page .chosen-product .button-box button:hover {
-	background: #222222 !important;
+	background: #222222 ;
 	transform: translateY(-2px);
 }
 
@@ -857,7 +861,74 @@ height: 620px;
 	background: rgba(255, 255, 255, 0.92);
 	box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
 }
+.products-page .chosen-product .button-box .button-box-set {
+  width: 120px;
+  height: 42px;
 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 6px;
+
+
+  border: 1px solid #e6e6e6;
+  border-radius: 14px;
+}
+
+/* buttons */
+.products-page .chosen-product .button-box .button-box-set .btn-plus {
+  width: 32px;
+  height: 32px;
+
+  border: none;
+  border-radius: 10px;
+
+
+  cursor: pointer;
+
+  font-size: 18px;
+  font-weight: 600;
+
+  transition: 0.2s ease;
+
+}
+
+.products-page
+  .chosen-product
+  .button-box
+  .button-box-set
+  .btn-plus:hover {
+  background: #111;
+
+}
+
+/* number */
+.products-page .chosen-product .button-box .button-box-set .qty-num {
+  min-width: 24px;
+  text-align: center;
+
+  font-size: 15px;
+  font-weight: 600;
+  color: #111;
+}
+
+
+
+.products-page .chosen-product .sidebar-section-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Satoshi", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #000000;
+  padding-top: 20px;
+  cursor: pointer;
+}
+
+
+ 
 .products-page .chosen-product .swiper-button-next:after,
 .products-page .chosen-product .swiper-button-prev:after {
 	font-size: 14px;

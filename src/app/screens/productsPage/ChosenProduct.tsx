@@ -45,10 +45,7 @@ const restaurantRetriever = createSelector(retriveRestaurant, (restaurant) => ({
   restaurant,
 }));
 interface ChosenProductProps {
-
   onAdd: (items: CartItem) => void;
-  
-  
 }
 
 export default function ChosenProduct(props: ChosenProductProps) {
@@ -58,6 +55,7 @@ export default function ChosenProduct(props: ChosenProductProps) {
   const { chosenProduct } = useSelector(chosenProductRetriever);
   const { restaurant } = useSelector(restaurantRetriever);
   const [selectedSize, setSelectedSize] = React.useState<string>("");
+  const [quantity, setQuantity] = React.useState(1);
 
   useEffect(() => {
     const product = new ProductService();
@@ -129,6 +127,7 @@ export default function ChosenProduct(props: ChosenProductProps) {
                 </div>
               </div>
             </Box>
+			<div className="sidebar-section-title">Choose size</div>
             <div className="sidebar-sizes">
               {[
                 { label: "Small", value: "S" },
@@ -148,6 +147,7 @@ export default function ChosenProduct(props: ChosenProductProps) {
                 </div>
               ))}
             </div>
+			<div className="sidebar-section-title">Description</div>
             <p className={"product-desc"}>
               {chosenProduct?.productDesc
                 ? chosenProduct.productDesc
@@ -158,21 +158,40 @@ export default function ChosenProduct(props: ChosenProductProps) {
               <span>Price:</span>
               <span>${chosenProduct.productPrice}</span>
             </div>
+
             <div className={"button-box"}>
+              <Box sx={{ minWidth: 110, display: "flex", alignItems:"center" }  }>
+                <div className="button-box-set">
+                  <button
+                    onClick={() =>  setQuantity((prev:number) => Math.max(1, prev - 1))}
+                    className="btn-plus"
+                  >
+                    -
+                  </button>
+
+                  <span className="qty-num">{quantity}</span>
+
+                  <button
+                    onClick={() =>  setQuantity((prev: number) => prev + 1)}
+                    className="btn-plus"
+                  >
+                    +
+                  </button>
+                </div>
+              </Box>
               <Button
                 variant="contained"
                 onClick={(e) => {
                   onAdd({
                     _id: chosenProduct._id,
-                    quantity: 1,
+                    quantity: quantity,
                     name: chosenProduct.productName,
                     price: chosenProduct.productPrice,
                     image: chosenProduct.productImages[0],
-					selectedSize: selectedSize,
-
-
+                    selectedSize: selectedSize,
                   });
                   e.stopPropagation();
+				  setQuantity(1);
                 }}
               >
                 Add To Basket
