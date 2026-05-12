@@ -8,6 +8,7 @@ export interface OrderItem {
 	itemQuantity: number;
 	itemPrice: number;
 	productId: string;
+	selectedSize:ProductSize;
 	orderId: string;
 	createdAt: Date;
 	updatedAt: Date;

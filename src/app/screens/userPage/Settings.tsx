@@ -16,7 +16,7 @@ export function Settings() {
 const [memberImage, setMemberImage] = useState<string>(
 	authMember?.memberImage
 		? `${serverApi}/${authMember.memberImage}`
-		: "/icons/default-user.svg",
+		: "/icons/user-icon.svg",
 );
 	
 

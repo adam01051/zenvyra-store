@@ -86,9 +86,9 @@ export default function Footer() {
 						Zenvyra © 2000-2023, All Rights Reserved
 					</Box>
 					<Box className="payment-icons">
-						<img src="/icons/visa.svg" alt="visa" />
-						<img src="/icons/mastercard.svg" alt="mastercard" />
-						<img src="/icons/paypal.svg" alt="paypal" />
+						<img src="/icons/visa-card.svg" alt="visa" />
+						<img src="/icons/master-card.svg" alt="mastercard" />
+						<img src="/icons/paypal-card.svg" alt="paypal" />
 						<img src="/icons/apple-pay.svg" alt="applepay" />
 						<img src="/icons/google-pay.svg" alt="googlepay" />
 					</Box>

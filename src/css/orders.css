@@ -85,10 +85,13 @@
 }
 
 /* ITEM ROW */
+
 .order-page .orders-name-price {
 	display: flex;
 	align-items: center;
 	gap: 14px;
+	height: 80px;
+	
 }
 
 .order-page .order-dish-img {
@@ -200,6 +203,8 @@
 /* PROFILE + PAYMENT CARDS */
 .order-page .order-info-box,
 .order-page .payment-details-box {
+	
+	text-align: center;
 	background: #f3f4f6;
 	border-radius: 10px;
 	padding: 28px;
