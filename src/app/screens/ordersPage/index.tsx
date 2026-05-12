@@ -233,3 +233,9 @@ export default function OrdersPage() {
 		</div>
 	);
 }
+
+
+
+
+//modification in signup and login 
+//adding  stock  size and quantity to the choosen product
