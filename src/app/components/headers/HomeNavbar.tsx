@@ -111,7 +111,7 @@ export default function HomeNavbar(props:HomeNavbarProps) {
 								src={
 									authMember?.memberImage
 										? `${serverApi}/${authMember.memberImage}`
-										: "/icons/default-user.svg"
+										: "/icons/user-icon.svg"
 								}
 								alt="avatarPic"
 								onClick={handleLogoutClick}
