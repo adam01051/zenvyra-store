@@ -54,7 +54,7 @@ export default function ChosenProduct(props: ChosenProductProps) {
   const { setRestaurant, setChosenProduct } = actionDispatch(useDispatch());
   const { chosenProduct } = useSelector(chosenProductRetriever);
   const { restaurant } = useSelector(restaurantRetriever);
-  const [selectedSize, setSelectedSize] = React.useState<string>("");
+  const [selectedSize, setSelectedSize] = React.useState<string>("S");
   const [quantity, setQuantity] = React.useState(1);
 
   useEffect(() => {
@@ -71,6 +71,7 @@ export default function ChosenProduct(props: ChosenProductProps) {
   }, []);
 
   if (!chosenProduct) return null;
+
   return (
     <div className={"chosen-product"}>
       <Box className={"title"}>Product Detail</Box>
@@ -192,6 +193,7 @@ export default function ChosenProduct(props: ChosenProductProps) {
                   });
                   e.stopPropagation();
 				  setQuantity(1);
+				
                 }}
               >
                 Add To Basket

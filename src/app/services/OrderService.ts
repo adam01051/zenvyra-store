@@ -2,6 +2,7 @@ import axios from "axios";
 import { serverApi } from "../../lib/config";
 import { CartItem } from "../../lib/types/search";
 import { Order, OrderInquiry, OrderItemInput, OrderUpdateInput } from "../../lib/types/order";
+import { ProductSize } from "../../lib/enums/product.enum";
 
 class OrderService {
 	private readonly path: string;
@@ -17,9 +18,10 @@ class OrderService {
 					itemQuantity: cartItem.quantity,
 					itemPrice: cartItem.price,
 					productId: cartItem._id,
-					selectedSize: cartItem.selectedSize,
+					selectedSize: cartItem.selectedSize as ProductSize,
 				};
 			});
+	console.log(orderItems.map(item => item.selectedSize));
 			const url = this.path + "/order/create";
 			const result = await axios.post(url, orderItems, {
 				withCredentials: true,

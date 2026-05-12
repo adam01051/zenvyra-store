@@ -18,7 +18,7 @@ export interface OrderItemInput {
 	itemPrice: number;
 	productId: string;
 	orderId?: string;
-	selectedSize: ProductSize;
+	selectedSize?: ProductSize;
 }
 
 export interface Order {

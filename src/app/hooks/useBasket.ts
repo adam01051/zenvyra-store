@@ -9,7 +9,8 @@ const useBasket = () => {
 
 	const onAdd = (input: CartItem) => {
 		const exist: any = cartItems.find(
-			(item: CartItem) => item._id === input._id,
+			(item: CartItem) => item._id === input._id && item.selectedSize === input.selectedSize,
+
 		);
 		if (exist) {
 			const cartUpdate = cartItems.map((item: CartItem) =>
