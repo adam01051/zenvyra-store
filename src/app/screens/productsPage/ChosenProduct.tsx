@@ -53,6 +53,7 @@ export default function ChosenProduct(props: ChosenProductProps) {
   const { productId } = useParams<{ productId: string }>();
   const { setRestaurant, setChosenProduct } = actionDispatch(useDispatch());
   const { chosenProduct } = useSelector(chosenProductRetriever);
+  const [toastVisible, setToastVisible] = React.useState(false);
   const { restaurant } = useSelector(restaurantRetriever);
   const [selectedSize, setSelectedSize] = React.useState<string>("S");
   const [quantity, setQuantity] = React.useState(1);
@@ -128,7 +129,7 @@ export default function ChosenProduct(props: ChosenProductProps) {
                 </div>
               </div>
             </Box>
-			<div className="sidebar-section-title">Choose size</div>
+            <div className="sidebar-section-title">Choose size</div>
             <div className="sidebar-sizes">
               {[
                 { label: "Small", value: "S" },
@@ -148,7 +149,7 @@ export default function ChosenProduct(props: ChosenProductProps) {
                 </div>
               ))}
             </div>
-			<div className="sidebar-section-title">Description</div>
+            <div className="sidebar-section-title">Description</div>
             <p className={"product-desc"}>
               {chosenProduct?.productDesc
                 ? chosenProduct.productDesc
@@ -161,10 +162,14 @@ export default function ChosenProduct(props: ChosenProductProps) {
             </div>
 
             <div className={"button-box"}>
-              <Box sx={{ minWidth: 110, display: "flex", alignItems:"center" }  }>
+              <Box
+                sx={{ minWidth: 110, display: "flex", alignItems: "center" }}
+              >
                 <div className="button-box-set">
                   <button
-                    onClick={() =>  setQuantity((prev:number) => Math.max(1, prev - 1))}
+                    onClick={() =>
+                      setQuantity((prev: number) => Math.max(1, prev - 1))
+                    }
                     className="btn-plus"
                   >
                     -
@@ -173,7 +178,7 @@ export default function ChosenProduct(props: ChosenProductProps) {
                   <span className="qty-num">{quantity}</span>
 
                   <button
-                    onClick={() =>  setQuantity((prev: number) => prev + 1)}
+                    onClick={() => setQuantity((prev: number) => prev + 1)}
                     className="btn-plus"
                   >
                     +
@@ -185,20 +190,59 @@ export default function ChosenProduct(props: ChosenProductProps) {
                 onClick={(e) => {
                   onAdd({
                     _id: chosenProduct._id,
-                    quantity: quantity,
+                    quantity,
                     name: chosenProduct.productName,
                     price: chosenProduct.productPrice,
                     image: chosenProduct.productImages[0],
-                    selectedSize: selectedSize,
+                    selectedSize,
                   });
                   e.stopPropagation();
-				  setQuantity(1);
-				
+                  setQuantity(1);
+                  setToastVisible(true);
+                  setTimeout(() => setToastVisible(false), 3200);
                 }}
               >
                 Add To Basket
               </Button>
             </div>
+            {toastVisible && (
+              <div
+                className="toast show"
+                style={{ position: "fixed", bottom: 32, right: 32 }}
+              >
+                <div className="toast-icon">
+                  <img
+                    src="/icons/shopping-cart.svg"
+                    style={{ width: 18, filter: "invert(1)" }}
+                  />
+                </div>
+                <div
+                  style={{ display: "flex", flexDirection: "column", gap: 2 }}
+                >
+                  <span
+                    style={{ fontSize: 14, fontWeight: 600, color: "#000" }}
+                  >
+                    Added to basket!
+                  </span>
+                  <span style={{ fontSize: 12, color: "#888" }}>
+                    {chosenProduct.productName}
+                  </span>
+                </div>
+                <button
+                  onClick={() => setToastVisible(false)}
+                  style={{
+                    marginLeft: "auto",
+                    background: "none",
+                    border: "none",
+                    cursor: "pointer",
+                    fontSize: 16,
+                  }}
+                >
+                  ✕
+                </button>
+                <div className="toast-bar" />
+              </div>
+            )}
           </Box>
         </Stack>
       </Container>
