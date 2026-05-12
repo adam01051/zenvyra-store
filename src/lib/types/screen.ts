@@ -22,7 +22,7 @@ export interface HomePageState{
 
 
 export interface ProductPageStage{
-    restaurant: Member | null;
+    store: Member | null;
     chosenProduct: Product | null;
     products: Product[];
 }

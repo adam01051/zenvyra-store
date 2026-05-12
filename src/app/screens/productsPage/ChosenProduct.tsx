@@ -15,11 +15,11 @@ import "swiper/css/navigation";
 import "swiper/css/thumbs";
 import { FreeMode, Navigation, Thumbs } from "swiper";
 
-import { setChosenProduct, setRestaurant } from "./slice";
+import { setChosenProduct, setStore } from "./slice";
 import { Product } from "../../../lib/types/product";
 import { Dispatch } from "@reduxjs/toolkit";
 import { createSelector } from "reselect";
-import { retriveChosenProduct, retriveRestaurant } from "./selector";
+import { retriveChosenProduct, retriveStore } from "./selector";
 import { useParams } from "react-router-dom";
 import ProductService from "../../services/ProductService";
 
@@ -30,7 +30,7 @@ import { serverApi } from "../../../lib/config";
 import { CartItem } from "../../../lib/types/search";
 
 const actionDispatch = (dispatch: Dispatch) => ({
-  setRestaurant: (data: Member) => dispatch(setRestaurant(data)),
+  setStore: (data: Member) => dispatch(setStore(data)),
   setChosenProduct: (data: Product) => dispatch(setChosenProduct(data)),
 });
 
@@ -41,8 +41,8 @@ const chosenProductRetriever = createSelector(
   }),
 );
 
-const restaurantRetriever = createSelector(retriveRestaurant, (restaurant) => ({
-  restaurant,
+const storeRetriever = createSelector(retriveStore, (store) => ({
+  store,
 }));
 interface ChosenProductProps {
   onAdd: (items: CartItem) => void;
@@ -51,10 +51,10 @@ interface ChosenProductProps {
 export default function ChosenProduct(props: ChosenProductProps) {
   const { onAdd } = props;
   const { productId } = useParams<{ productId: string }>();
-  const { setRestaurant, setChosenProduct } = actionDispatch(useDispatch());
+  const { setStore, setChosenProduct } = actionDispatch(useDispatch());
   const { chosenProduct } = useSelector(chosenProductRetriever);
   const [toastVisible, setToastVisible] = React.useState(false);
-  const { restaurant } = useSelector(restaurantRetriever);
+  const { store } = useSelector(storeRetriever);
   const [selectedSize, setSelectedSize] = React.useState<string>("S");
   const [quantity, setQuantity] = React.useState(1);
 
@@ -66,8 +66,8 @@ export default function ChosenProduct(props: ChosenProductProps) {
       .catch((err) => console.log(err));
     const member = new MemberService();
     member
-      .getRestaurant()
-      .then((data) => setRestaurant(data))
+      .getStore()
+      .then((data) => setStore(data))
       .catch((err) => console.log(err));
   }, []);
 
@@ -117,7 +117,9 @@ export default function ChosenProduct(props: ChosenProductProps) {
             </strong>
 
             <span className={"resto-name"}>
-              {/*{chosenProduct?.productLeftCount} items left*/}
+         {chosenProduct.variants.map((ele, index) => (
+  <div key={index}>{}</div>
+))}
             </span>
 
             <Box className={"rating-box"}>
