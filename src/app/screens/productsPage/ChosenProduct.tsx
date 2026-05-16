@@ -117,9 +117,9 @@ export default function ChosenProduct(props: ChosenProductProps) {
             </strong>
 
             <span className={"resto-name"}>
-         {chosenProduct.variants.map((ele, index) => (
-  <div key={index}>{}</div>
-))}
+              {chosenProduct.variants.map((ele, index) => (
+                <div key={index}>{}</div>
+              ))}
             </span>
 
             <Box className={"rating-box"}>
@@ -131,26 +131,32 @@ export default function ChosenProduct(props: ChosenProductProps) {
                 </div>
               </div>
             </Box>
+          
             <div className="sidebar-section-title">Choose size</div>
-            <div className="sidebar-sizes">
-              {[
-                { label: "Small", value: "S" },
-                { label: "Medium", value: "M" },
-                { label: "Large", value: "L" },
-                { label: "X-Large", value: "XL" },
-                { label: "XX-Large", value: "XXL" },
-              ].map((size) => (
-                <div
-                  key={size.value}
-                  className={`size-pill ${
-                    selectedSize === size.value ? "active" : ""
-                  }`}
-                  onClick={() => setSelectedSize(size.value)}
-                >
-                  {size.label}
-                </div>
-              ))}
-            </div>
+
+<div className="sidebar-sizes">
+  {chosenProduct.variants?.map((variant: any) => {
+    const outOfStock = variant.stock === 0;
+    return (
+      <div
+        key={variant.size}
+        className={`size-pill 
+          ${selectedSize === variant.size ? "active" : ""} 
+          ${outOfStock ? "out-of-stock" : ""}`}
+        onClick={() => !outOfStock && setSelectedSize(variant.size)}
+        title={outOfStock ? "Out of stock" : `${variant.stock} left`}
+      >
+        <span className="size-label">{variant.size}</span>
+        {!outOfStock && (
+          <span className="size-stock">{variant.stock}</span>
+        )}
+        {outOfStock && (
+          <span className="size-badge-out">✕</span>
+        )}
+      </div>
+    );
+  })}
+</div>
             <div className="sidebar-section-title">Description</div>
             <p className={"product-desc"}>
               {chosenProduct?.productDesc

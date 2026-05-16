@@ -1054,3 +1054,107 @@
     transform: scaleX(0);
   }
 }
+
+/* ── Size pills ─────────────────────────────────────────── */
+
+.chosen-product .sidebar-section-title {
+  font-family: "Satoshi", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 10px;
+  margin-top: 4px;
+}
+
+.chosen-product .sidebar-sizes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Base pill */
+.chosen-product .sidebar-sizes .size-pill {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 64px;
+  height: 60px;
+  padding: 0 14px;
+  border-radius: 12px;
+  border: 1.5px solid #e8e8e8;
+  background: #f2f0f1;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  gap: 2px;
+}
+
+.chosen-product .sidebar-sizes .size-pill:hover:not(.out-of-stock) {
+  border-color: #000000;
+  background: #ffffff;
+}
+
+/* Active / selected */
+.chosen-product .sidebar-sizes .size-pill.active {
+  background: #000000;
+  border-color: #000000;
+}
+
+.chosen-product .sidebar-sizes .size-pill.active .size-label {
+  color: #ffffff;
+}
+
+.chosen-product .sidebar-sizes .size-pill.active .size-stock {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+/* Size letter */
+.chosen-product .sidebar-sizes .size-pill .size-label {
+  font-family: "Satoshi", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #000000;
+  line-height: 1;
+}
+
+/* Stock count below size */
+.chosen-product .sidebar-sizes .size-pill .size-stock {
+  font-family: "Satoshi", sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.4);
+  line-height: 1;
+}
+
+/* Out of stock state */
+.chosen-product .sidebar-sizes .size-pill.out-of-stock {
+  opacity: 0.38;
+  cursor: not-allowed;
+  border-color: #e8e8e8;
+  background: #f7f7f7;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Diagonal strikethrough line on out-of-stock */
+.chosen-product .sidebar-sizes .size-pill.out-of-stock::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.25);
+  transform: rotate(-20deg);
+  pointer-events: none;
+}
+
+.chosen-product .sidebar-sizes .size-pill.out-of-stock .size-label {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.chosen-product .sidebar-sizes .size-pill .size-badge-out {
+  font-size: 10px;
+  color: rgba(0, 0, 0, 0.3);
+}

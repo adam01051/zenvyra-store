@@ -40,7 +40,7 @@ export default function FinishedOrders() {
 												alt=""
 											/>
 											<p className={"title-dish"}>{product.productName}</p>
-												<p>{item.selectedSize}</p>
+												<p>{item.selectedSize} - size</p>
 											<Box className={"price-box"}>
 												<p>${item.itemPrice}</p>
 												<img src={"/icons/close.svg"} alt="" />
