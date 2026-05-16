@@ -757,7 +757,7 @@
 /* PRODUCT NAME */
 .products-page .chosen-product .info-box .product-name {
   font-family: "Integral CF", sans-serif;
-  font-size: 42px;
+  font-size: 25px;
   font-weight: 800;
   line-height: 1.05;
   color: #000000;
@@ -1157,4 +1157,65 @@
 .chosen-product .sidebar-sizes .size-pill .size-badge-out {
   font-size: 10px;
   color: rgba(0, 0, 0, 0.3);
+}
+
+.products-page .chosen-product .chosen-product-info {
+  width: 52%;
+  height: auto;
+  min-height: 620px;
+  background: #f8f6f2;
+  border-radius: 24px;
+  overflow: visible;
+  padding: 32px 36px;    /* was 50px */
+}
+
+.products-page .chosen-product .info-box .product-name {
+  font-size: 22px;       /* was 25px */
+  margin-bottom: 8px;    /* was 12px */
+}
+
+.products-page .chosen-product .info-box .rating-box {
+  margin-top: 12px;      /* was 22px */
+}
+
+.products-page .chosen-product .info-box .product-desc {
+  margin-top: 12px;      /* was 28px */
+  margin-bottom: 12px;   /* was 28px */
+  font-size: 14px;       /* was 18px */
+  line-height: 1.5;
+}
+
+.products-page .chosen-product .info-box .product-price {
+  margin-top: 10px;      /* was 20px */
+  margin-bottom: 16px;   /* was 30px */
+}
+
+.products-page .chosen-product .product-price span:last-child {
+  font-size: 32px;       /* was 42px */
+}
+
+.products-page .chosen-product .info-box .sidebar-sizes {
+  margin-top: 10px;      /* was 18px */
+  gap: 6px;              /* was 8px */
+}
+
+.products-page .chosen-product .info-box .sidebar-sizes .size-pill {
+  height: 32px;          /* was 36px */
+  padding: 0 12px;       /* was 16px */
+  font-size: 12px;       /* was 13px */
+}
+
+.products-page .chosen-product .sidebar-section-title {
+  padding-top: 12px;     /* was 20px */
+  font-size: 14px;       /* was 16px */
+}
+
+.products-page .chosen-product .button-box {
+  margin-top: 16px;      /* was auto — auto was pushing it too far */
+  gap: 12px;             /* was 20px */
+}
+
+.products-page .chosen-product .button-box button {
+  height: 48px;          /* was 56px */
+  font-size: 15px;       /* was 17px */
 }
