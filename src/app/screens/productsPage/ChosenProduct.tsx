@@ -41,6 +41,9 @@ const chosenProductRetriever = createSelector(
   }),
 );
 
+ 
+
+
 const storeRetriever = createSelector(retriveStore, (store) => ({
   store,
 }));
@@ -50,12 +53,13 @@ interface ChosenProductProps {
 
 export default function ChosenProduct(props: ChosenProductProps) {
   const { onAdd } = props;
+   const [errorToast, setErrorToast] = React.useState<string | null>(null);
   const { productId } = useParams<{ productId: string }>();
   const { setStore, setChosenProduct } = actionDispatch(useDispatch());
   const { chosenProduct } = useSelector(chosenProductRetriever);
   const [toastVisible, setToastVisible] = React.useState(false);
   const { store } = useSelector(storeRetriever);
-  const [selectedSize, setSelectedSize] = React.useState<string>("S");
+  const [selectedSize, setSelectedSize] = React.useState<string>("");
   const [quantity, setQuantity] = React.useState(1);
 
   useEffect(() => {
@@ -72,6 +76,12 @@ export default function ChosenProduct(props: ChosenProductProps) {
   }, []);
 
   if (!chosenProduct) return null;
+
+
+  const showError = (msg: string) => {
+    setErrorToast(msg);
+    setTimeout(() => setErrorToast(null), 3500);
+  };
 
   return (
     <div className={"chosen-product"}>
@@ -131,32 +141,32 @@ export default function ChosenProduct(props: ChosenProductProps) {
                 </div>
               </div>
             </Box>
-          
+
             <div className="sidebar-section-title">Choose size</div>
 
-<div className="sidebar-sizes">
-  {chosenProduct.variants?.map((variant: any) => {
-    const outOfStock = variant.stock === 0;
-    return (
-      <div
-        key={variant.size}
-        className={`size-pill 
+            <div className="sidebar-sizes">
+              {chosenProduct.variants?.map((variant: any) => {
+                const outOfStock = variant.stock === 0;
+                return (
+                  <div
+                    key={variant.size}
+                    className={`size-pill 
           ${selectedSize === variant.size ? "active" : ""} 
           ${outOfStock ? "out-of-stock" : ""}`}
-        onClick={() => !outOfStock && setSelectedSize(variant.size)}
-        title={outOfStock ? "Out of stock" : `${variant.stock} left`}
-      >
-        <span className="size-label">{variant.size}</span>
-        {!outOfStock && (
-          <span className="size-stock">{variant.stock}</span>
-        )}
-        {outOfStock && (
-          <span className="size-badge-out">✕</span>
-        )}
-      </div>
-    );
-  })}
-</div>
+                    onClick={() => !outOfStock && setSelectedSize(variant.size)}
+                    title={
+                      outOfStock ? "Out of stock" : `${variant.stock} left`
+                    }
+                  >
+                    <span className="size-label">{variant.size}</span>
+                    {!outOfStock && (
+                      <span className="size-stock">{variant.stock}</span>
+                    )}
+                    {outOfStock && <span className="size-badge-out">✕</span>}
+                  </div>
+                );
+              })}
+            </div>
             <div className="sidebar-section-title">Description</div>
             <p className={"product-desc"}>
               {chosenProduct?.productDesc
@@ -196,6 +206,21 @@ export default function ChosenProduct(props: ChosenProductProps) {
               <Button
                 variant="contained"
                 onClick={(e) => {
+                  if (!selectedSize) {
+                    showError("Please select a size before adding to basket");
+                    return;
+                  }
+
+                  const selectedVariant = chosenProduct.variants.find(
+                    (variant: any) => variant.size === selectedSize,
+                  );
+
+                  if (!selectedVariant || quantity > selectedVariant.stock) {
+                    showError(
+                      `Only ${selectedVariant?.stock || 0} items left in size ${selectedSize}`,
+                    );
+                    return;
+                  }
                   onAdd({
                     _id: chosenProduct._id,
                     quantity,
@@ -249,6 +274,23 @@ export default function ChosenProduct(props: ChosenProductProps) {
                   ✕
                 </button>
                 <div className="toast-bar" />
+              </div>
+            )}
+            {errorToast && (
+              <div className="toast toast-error show">
+                <div className="toast-icon toast-icon-error">
+                  <span style={{ fontSize: 16, color: "#fff" }}>!</span>
+                </div>
+                <div className="toast-body">
+                  <span className="toast-title">{errorToast}</span>
+                </div>
+                <button
+                  className="toast-close"
+                  onClick={() => setErrorToast(null)}
+                >
+                  ✕
+                </button>
+                <div className="toast-bar toast-bar-error" />
               </div>
             )}
           </Box>
