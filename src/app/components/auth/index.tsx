@@ -364,7 +364,7 @@ const handleLoginRequest = async () => {
           <Box>
             {AuthLayout(
               "CREATE ACCOUNT",
-              "Join Shop.co and upgrade your wardrobe.",
+              "Join Zenvyra and upgrade your wardrobe.",
               "Create Account",
               true,
               handleSignupRequest,
