@@ -204,7 +204,7 @@ const handleLoginRequest = async () => {
               fontFamily: "sans-serif",
             }}
           >
-            SHOP.CO
+            Zenvyra
           </Box>
 
           <Box sx={{ mt: 2, fontSize: "15px", opacity: 0.92 }}>
@@ -250,12 +250,19 @@ const handleLoginRequest = async () => {
           label="Username"
           variant="outlined"
           onChange={handleUserName}
+            InputLabelProps={{
+    style: {
+      color: "#888",
+    },
+  }}
           sx={{
             mb: 2.2,
             "& .MuiOutlinedInput-root": {
               borderRadius: "14px",
               bgcolor: "#f6f6f6",
+              color: "rgba(0,0,0,0.65)",
             },
+            
           }}
         />
 
@@ -265,6 +272,11 @@ const handleLoginRequest = async () => {
             fullWidth
             label="Phone Number"
             variant="outlined"
+              InputLabelProps={{
+    style: {
+      color: "#888",
+    },
+  }}
             onChange={handlePhone}
             sx={{
               mb: 2.2,
@@ -284,6 +296,11 @@ const handleLoginRequest = async () => {
           variant="outlined"
           onChange={handlePassword}
           onKeyDown={handlePasswordKeyDown}
+            InputLabelProps={{
+    style: {
+      color: "#888",
+    },
+  }}
           sx={{
             mb: 3,
             "& .MuiOutlinedInput-root": {
@@ -356,6 +373,7 @@ const handleLoginRequest = async () => {
             sx: {
               backgroundColor: "rgba(0,0,0,0.65)",
               backdropFilter: "blur(7px)",
+         
             },
           },
         }}
