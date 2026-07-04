@@ -9,7 +9,7 @@ npm i yarn -g
 yarn global add serve
 yarn
 yarn build
-pm2 start "yarn run start:prod" --name "ZENVYRA-REACT"
+pm2 start "yarn run start:prod" --name= "ZENVYRA-REACT"
 
 
 # #DEVELOPMENT
